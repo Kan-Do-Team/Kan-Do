@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harki\\source\\repos\\Kan-Do\\Kan-Do.csproj",
+      "projectUniqueName": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
       "projectName": "Kan-Do",
-      "projectPath": "C:\\Users\\harki\\source\\repos\\Kan-Do\\Kan-Do.csproj",
+      "projectPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
       "packagesPath": "C:\\Users\\harki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harki\\source\\repos\\Kan-Do\\obj\\",
+      "outputPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\harki\\AppData\\Roaming\\NuGet\\NuGet.Config",
