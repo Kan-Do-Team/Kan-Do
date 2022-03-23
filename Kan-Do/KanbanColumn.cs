@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kan_Do
 {
-    internal class KanbanColumn
+    public class KanbanColumn
     {
         //This class is declared as a list object in the KanbanBoardModel 
         //(The model to the KanbanBoard UI)
