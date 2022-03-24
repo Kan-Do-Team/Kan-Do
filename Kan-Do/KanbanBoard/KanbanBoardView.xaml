@@ -18,5 +18,18 @@
             <Button x:Name="HomeButton" Height="30" Width="60" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         </Grid>
         
+        <!--Grid for the Columns-->
+        <Grid>
+            <ItemsControl ...>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Grid>
+        
     </Grid>
 </Page>
