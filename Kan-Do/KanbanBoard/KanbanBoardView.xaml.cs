@@ -20,9 +20,11 @@ namespace Kan_Do.KanbanBoard
     /// </summary>
     public partial class KanbanBoardView : Page
     {
+        public KanbanBoardViewModel KBoardVM; 
         public KanbanBoardView()
         {
             InitializeComponent();
+            KBoardVM = new KanbanBoardViewModel();
         }
     }
 }

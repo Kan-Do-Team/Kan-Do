@@ -9,6 +9,14 @@
       Title="KanbanBoardView">
 
     <Grid>
+        <!--Grid element for the top panel of the board-->
+        <Grid x:Name="ControlsPanel">
+            <Button x:Name="SaveBtn" Height="40" Width=" 120" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <!-- TODO: Replace label content with variable binding-->
+            <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+            <!-- TODO: Route button to the HomePage-->
+            <Button x:Name="HomeButton" Height="30" Width="60" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
         
     </Grid>
 </Page>
