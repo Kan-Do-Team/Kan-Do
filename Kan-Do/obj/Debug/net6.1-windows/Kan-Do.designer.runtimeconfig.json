@@ -1,0 +1,12 @@
+{
+  "runtimeOptions": {
+    "tfm": "net6.1",
+    "additionalProbingPaths": [
+      "C:\\Users\\harki\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\harki\\.nuget\\packages"
+    ],
+    "configProperties": {
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+    }
+  }
+}
