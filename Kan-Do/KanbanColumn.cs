@@ -16,18 +16,21 @@ namespace Kan_Do
         private int mcolumnNumber;
         private int mcolumnId;
 
+        //Name of the column that should appear in the UI 
         public string ColumnName
         {
             get { return mcolumnName; }
             set { mcolumnName = value;}
         }
 
+        //Starts at 0, the position of the column in the UI (0 -> n # columns)
         public int ColumnNumber
         {
             get { return mcolumnNumber; }
             set { mcolumnNumber = value;}
         }
 
+        //Id of the column that will be referenced by a card 
         public int ColumnId
         {
             get { return mcolumnId; }
