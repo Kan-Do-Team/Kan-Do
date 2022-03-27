@@ -11,14 +11,44 @@ namespace Kan_Do.KanbanBoard
         //This is where all of the functions that will be used in the UI, but require data in the model will be defined
 
         //Create a defintion of the model object 
-        public KanbanBoardModel KBoardModel; 
-        
+        //public KanbanBoardModel KBoardModel;
+
+        //List of the KanbanColumn class
+        public List<KanbanColumn> boardColumns;
 
         //Constructor
         public KanbanBoardViewModel()
         {
-            KBoardModel = new KanbanBoardModel();
+            boardColumns = new List<KanbanColumn>();
+            FillInitialColumns();
         }
+
+        //Function that fills the initial column values in the UI 
+        //Default will be To Do, Doing and Done
+        public void FillInitialColumns()
+        {
+            //Initialize a column type element to add to the list 
+            KanbanColumn colelement = new KanbanColumn();
+            
+            //First column type, To Do
+            colelement.ColumnName = "To Do";
+            colelement.ColumnNumber = 0;
+            colelement.ColumnId = 1;
+            boardColumns.Add(colelement);
+
+            //Second column type, Doing 
+            colelement.ColumnName = "Doing";
+            colelement.ColumnNumber = 1;
+            colelement.ColumnId = 2;
+            boardColumns.Add(colelement);
+
+            //Third column type, Done
+            colelement.ColumnName = "Done";
+            colelement.ColumnNumber= 2;
+            colelement.ColumnId = 3;
+            boardColumns.Add(colelement);
+        }
+
 
         //FUNCTIONS FOR THE BOARD
 
