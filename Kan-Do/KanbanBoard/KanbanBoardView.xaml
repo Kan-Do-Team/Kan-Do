@@ -16,17 +16,17 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="SaveBtn" Height="40" Width=" 120" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <!-- TODO: Replace label content with variable binding-->
             <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
             <!-- TODO: Route button to the HomePage-->
-            <Button x:Name="HomeButton" Height="30" Width="60" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button x:Name="HomeButton" Height="40" Width="60" Grid.Row="0" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
             <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         </Grid>
 
         <!--Grid for the Columns-->
         <Grid>
-            <ItemsControl Name="ColumnElement">
+            <ItemsControl Name="ColumnElement" ItemsSource"KBoardVM.">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
@@ -36,8 +36,8 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <TextBox x:Name="ColumnName" Grid.Row="0" ></TextBox>
-                                <wpfx1:DropDownButton Width="200" Height="32" Content="[]" />
-                                <wpfx1:DropDownButton Width="200" Height="32" Content="..." />
+                                <wpfx1:DropDownButton Width="200" Height="32">[]</wpfx1:DropDownButton>
+                                <wpfx1:DropDownButton Width="200" Height="32">...</wpfx1:DropDownButton>
                                 <Button x:Name="ColumnOptions"></Button>
                             </Grid>
                         </StackPanel>
