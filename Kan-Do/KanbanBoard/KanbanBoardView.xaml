@@ -10,8 +10,14 @@
       Title="KanbanBoardView">
 
     <Grid>
+        <!--Row definitions for the entire view-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
         <!--Grid element for the top panel of the board-->
-        <Grid x:Name="ControlsPanel">
+        <Grid x:Name="ControlsPanel" Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
@@ -21,29 +27,40 @@
             <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
             <!-- TODO: Route button to the HomePage-->
             <Button x:Name="HomeButton" Height="40" Width="60" Grid.Row="0" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-            <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
         </Grid>
 
         <!--Grid for the Columns-->
-        <Grid>
-            <ItemsControl Name="ColumnElement" ItemsSource"KBoardVM.">
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+            <ItemsControl Name="ColumnsList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBox x:Name="ColumnName" Grid.Row="0" ></TextBox>
-                                <wpfx1:DropDownButton Width="200" Height="32">[]</wpfx1:DropDownButton>
-                                <wpfx1:DropDownButton Width="200" Height="32">...</wpfx1:DropDownButton>
-                                <Button x:Name="ColumnOptions"></Button>
-                            </Grid>
+                      <Grid>
+                         <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                         </Grid.RowDefinitions>
+                        <!--Stackpanel will have the column name, the column options button "..." and the card options button []-->
+                        <StackPanel Grid.Row="0" Height="40" Orientation="Horizontal">
+                           <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
+                            <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">[ ]</wpfx1:DropDownButton>
+                            <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">...</wpfx1:DropDownButton>
                         </StackPanel>
+                        <!-- TO DO: The ItemsControl for the CardList will go heree-->
+                        <StackPanel x:Name="ColumnSavePanel" Grid.Row="1" Orientation="Horizontal">
+                            <Button x:Name="SaveColumn" Height="20" Width="80" HorizontalAlignment="Right">Save Column</Button>
+                        </StackPanel>
+                      </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="1"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
             </ItemsControl>
+           </StackPanel>
         </Grid>
         
     </Grid>

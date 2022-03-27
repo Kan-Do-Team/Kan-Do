@@ -25,6 +25,13 @@ namespace Kan_Do.KanbanBoard
         {
             InitializeComponent();
             KBoardVM = new KanbanBoardViewModel();
+            ColumnsList.ItemsSource = KBoardVM.boardColumns;
+        }
+
+        private void AddColumn(object sender, RoutedEventArgs e)
+        {
+            //Call the function in the ViewModel that adds a column
+            KBoardVM.addColumn();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Kan_Do.KanbanBoard
 {
@@ -14,7 +15,7 @@ namespace Kan_Do.KanbanBoard
         //public KanbanBoardModel KBoardModel;
 
         //List of the KanbanColumn class
-        public List<KanbanColumn> boardColumns;
+        public ObservableCollection<KanbanColumn> boardColumns;
 
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
@@ -22,7 +23,7 @@ namespace Kan_Do.KanbanBoard
         //Constructor
         public KanbanBoardViewModel()
         {
-            boardColumns = new List<KanbanColumn>();
+            boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
         }
 
@@ -53,33 +54,56 @@ namespace Kan_Do.KanbanBoard
         //edit values in and save using the save column button on the UI 
         public void addColumn()
         {
-            //Increment the columnId
-            mcolId++;
+            try
+            {
+                //Increment the columnId
+                mcolId++;
 
-            //Find the number of columns in the list to determine what the next columnNumber will be 
-            int colNum = boardColumns.Count();
-            //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
+                //Find the number of columns in the list to determine what the next columnNumber will be 
+                int colNum = boardColumns.Count();
+                //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
 
-            //Add a new column element to the list 
-            boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId });
-
+                //Add a new column element to the list 
+                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId });
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
         }
 
-        //The saveColumn function is triggered by the saveColunn button in the UI 
+        //The saveColumn function is triggered by the saveColunn button in the UI
         //Since columns are created and filled with default values, this function will take in column data, find the associated column
         //In the columnlist, and update associated information 
-        public void saveColumn(string columnname, int columnnumber, int columnid)
+        /*public void saveColumn(string columnname, int columnnumber, int columnid)
         {
+            //Assume the saveColumn function can only be called once after the new column has been added to the list 
+            //This is because a search on the list compares objects in the list, not elements in the objects 
+            //KanbanColumn item = new KanbanColumn();
 
-        }
+            //item.ColumnName = 
 
-        //public void moveColumn(int columnid, ------)
 
-        //public void deleteColumn(int columnid)
+            //Search the List for the object that has the corresponding columnid
+            /*foreach(KanbanColumn i in boardColumns)
+            {
+                if(boardColumns.)
+            }
+
+            KanbanColumn colItem = new KanbanColumn();
+            colItem
+            //First, find the index that has the given columnnumber
+            boardColumns.Contains(KanbanColumn.ColumnNumber = columnnumber)*/
+
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
+        public void deleteColumn(int columnid)
+        {
+            //Find the element in the list that has the corresponding columnid
+        }
 
         //public void sortColumn(int columnid, string sortType -- could also be an int, rep the type of sort)
 
+        //public void moveColumn(int columnid, ------)
 
         //FUNCTIONS FOR CARDS
 
