@@ -16,6 +16,9 @@ namespace Kan_Do.KanbanBoard
         //List of the KanbanColumn class
         public List<KanbanColumn> boardColumns;
 
+        //ColumnId keeps track of the given columnId in the boardColumns list
+        private int mcolId;
+
         //Constructor
         public KanbanBoardViewModel()
         {
@@ -27,26 +30,10 @@ namespace Kan_Do.KanbanBoard
         //Default will be To Do, Doing and Done
         public void FillInitialColumns()
         {
-            //Initialize a column type element to add to the list 
-            KanbanColumn colelement = new KanbanColumn();
-            
-            //First column type, To Do
-            colelement.ColumnName = "To Do";
-            colelement.ColumnNumber = 0;
-            colelement.ColumnId = 1;
-            boardColumns.Add(colelement);
-
-            //Second column type, Doing 
-            colelement.ColumnName = "Doing";
-            colelement.ColumnNumber = 1;
-            colelement.ColumnId = 2;
-            boardColumns.Add(colelement);
-
-            //Third column type, Done
-            colelement.ColumnName = "Done";
-            colelement.ColumnNumber= 2;
-            colelement.ColumnId = 3;
-            boardColumns.Add(colelement);
+            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3 });
+            mcolId = 3;
         }
 
 
@@ -62,11 +49,34 @@ namespace Kan_Do.KanbanBoard
 
         //FUNCTIONS FOR COLUMNS
 
-        //public void addColumn(string columname, int columnnumber, int columnid)
+        //The addColumn button is triggered by the button click on the UI, it creates a new default column that the user can then
+        //edit values in and save using the save column button on the UI 
+        public void addColumn()
+        {
+            //Increment the columnId
+            mcolId++;
+
+            //Find the number of columns in the list to determine what the next columnNumber will be 
+            int colNum = boardColumns.Count();
+            //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
+
+            //Add a new column element to the list 
+            boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId });
+
+        }
+
+        //The saveColumn function is triggered by the saveColunn button in the UI 
+        //Since columns are created and filled with default values, this function will take in column data, find the associated column
+        //In the columnlist, and update associated information 
+        public void saveColumn(string columnname, int columnnumber, int columnid)
+        {
+
+        }
 
         //public void moveColumn(int columnid, ------)
 
         //public void deleteColumn(int columnid)
+        //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
 
         //public void sortColumn(int columnid, string sortType -- could also be an int, rep the type of sort)
 
