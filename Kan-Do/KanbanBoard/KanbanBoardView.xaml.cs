@@ -33,5 +33,14 @@ namespace Kan_Do.KanbanBoard
             //Call the function in the ViewModel that adds a column
             KBoardVM.addColumn();
         }
+
+        private void DeleteColumn(object sender, RoutedEventArgs e)
+        {
+            //Call the function in the ViewModel that adds a column
+            MessageBox.Show(String.Format("Delete column function clicked with {0}", sender.ToString()));
+            //Bind the delete button to the IsDelete boolean in the observable collection object list 
+            //The button will set the boolean value to true, and the delete function in the VM will look for an element
+            //Where the IsDelete value is true, and remove it from the list 
+        }
     }
 }
