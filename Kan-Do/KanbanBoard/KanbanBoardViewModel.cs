@@ -31,9 +31,9 @@ namespace Kan_Do.KanbanBoard
         //Default will be To Do, Doing and Done
         public void FillInitialColumns()
         {
-            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1 });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2 });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1, IsDelete = false });
+            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2, IsDelete = false });
+            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3, IsDelete = false });
             mcolId = 3;
         }
 
@@ -64,7 +64,7 @@ namespace Kan_Do.KanbanBoard
                 //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
 
                 //Add a new column element to the list 
-                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId });
+                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId, IsDelete = false });
             }
             catch (Exception ex)
             {
@@ -72,33 +72,12 @@ namespace Kan_Do.KanbanBoard
             }
         }
 
-        //The saveColumn function is triggered by the saveColunn button in the UI
-        //Since columns are created and filled with default values, this function will take in column data, find the associated column
-        //In the columnlist, and update associated information 
-        /*public void saveColumn(string columnname, int columnnumber, int columnid)
-        {
-            //Assume the saveColumn function can only be called once after the new column has been added to the list 
-            //This is because a search on the list compares objects in the list, not elements in the objects 
-            //KanbanColumn item = new KanbanColumn();
-
-            //item.ColumnName = 
-
-
-            //Search the List for the object that has the corresponding columnid
-            /*foreach(KanbanColumn i in boardColumns)
-            {
-                if(boardColumns.)
-            }
-
-            KanbanColumn colItem = new KanbanColumn();
-            colItem
-            //First, find the index that has the given columnnumber
-            boardColumns.Contains(KanbanColumn.ColumnNumber = columnnumber)*/
-
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
-        public void deleteColumn(int columnid)
+        public void deleteColumn(int columnnumber)
         {
-            //Find the element in the list that has the corresponding columnid
+            //Find the element in the list that has the corresponding columnnumber
+
+
         }
 
         //public void sortColumn(int columnid, string sortType -- could also be an int, rep the type of sort)
