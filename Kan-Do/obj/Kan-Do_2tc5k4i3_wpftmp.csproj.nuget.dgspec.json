@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
+        "projectName": "Kan-Do",
+        "projectPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
+        "packagesPath": "C:\\Users\\harki\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\harki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net4.8-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net4.8-windows",
+          "dependencies": {
+            "Extended.Wpf.Toolkit": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
