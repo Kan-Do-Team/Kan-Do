@@ -45,7 +45,9 @@
                         <!--Stackpanel will have the column name, the column options button "..." and the card options button []-->
                         <StackPanel Grid.Row="0" Height="40" Orientation="Horizontal">
                            <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
+                            <!--First dropdown button is for the Card filtering/sorting commands -->
                             <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">[ ]</wpfx1:DropDownButton>
+                            <!--Second dropdown button is for the Column alteration functionality -->
                             <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">...</wpfx1:DropDownButton>
                         </StackPanel>
                         <!-- TO DO: The ItemsControl for the CardList will go heree-->
