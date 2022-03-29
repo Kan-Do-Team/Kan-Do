@@ -53,7 +53,7 @@ namespace Kan_Do.KanbanBoard {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kan-Do;V1.0.0.0;component/kanbanboard/kanbanboardview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kan-Do;component/kanbanboard/kanbanboardview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\KanbanBoard\KanbanBoardView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

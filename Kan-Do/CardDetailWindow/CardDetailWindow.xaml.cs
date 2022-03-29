@@ -23,5 +23,7 @@ namespace Kan_Do.CardDetailWindow
         {
             InitializeComponent();
         }
+
+
     }
 }

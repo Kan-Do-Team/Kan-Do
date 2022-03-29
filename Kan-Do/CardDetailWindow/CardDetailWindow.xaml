@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kan_Do.CardDetailWindow"
         mc:Ignorable="d"
-        Title="CardDetailWindow" Height="450" Width="800">
+        Title="CardDetailWindow" Height="326" Width="657">
     <Grid>
+        <TextBox x:Name="textCardTitle" HorizontalAlignment="Left" Margin="205,10,0,0" TextWrapping="Wrap" Text="CardTitle" VerticalAlignment="Top" Width="447" Height="61" TextChanged="TextBox_TextChanged" FontSize="20" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="205,85,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_3" IsReadOnly="True"/>
+        <RichTextBox Margin="205,117,10,10" TextChanged="RichTextBox_TextChanged">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
         
+        <StackPanel Margin="7,10,472,270" RenderTransformOrigin="0.504,0.478" Orientation="Horizontal">
+            <TextBox TextWrapping="Wrap" Text="Date Created:" Width="80" Height="27" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="97" Height="27" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        
+        <StackPanel Margin="7,53,473,227" Orientation="Horizontal">
+            <TextBox TextWrapping="Wrap" Text="Due Date:" Width="81" TextChanged="TextBox_TextChanged_1" Height="30" IsReadOnly="True" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <DatePicker HorizontalContentAlignment="Center" Height="23"/>
+        </StackPanel>
+        
+        <StackPanel Margin="7,106,472,171" RenderTransformOrigin="0.504,0.478" Orientation="Horizontal">
+            <TextBox TextWrapping="Wrap" Text="Priority:" Height="25" Width="80" HorizontalContentAlignment="Right" TextChanged="TextBox_TextChanged_2" VerticalContentAlignment="Center"/>
+            <ComboBox Height="24" Width="98"/>
+        </StackPanel>
+
+        <StackPanel Margin="7,166,472,114" RenderTransformOrigin="0.504,0.478" Orientation="Horizontal">
+            <TextBox TextWrapping="Wrap" Text="Assignee:" Width="80" Height="27" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" IsReadOnly="True" TextChanged="TextBox_TextChanged_4"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="97" Height="27" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged_5"/>
+        </StackPanel>
+        
+        <Button Content="Save" Margin="114,255,472,35"/>   
     </Grid>
 </Window>

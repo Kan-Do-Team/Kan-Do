@@ -8,19 +8,26 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\harki\\.nuget\\packages\\": {}
+    "C:\\Users\\Pierce\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
+      "projectUniqueName": "C:\\Users\\Pierce\\OneDrive\\Courses\\Ryerson Courses\\4W CPS 888 Software Engineering\\Project\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
       "projectName": "Kan-Do",
-      "projectPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
-      "packagesPath": "C:\\Users\\harki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\obj\\",
+      "projectPath": "C:\\Users\\Pierce\\OneDrive\\Courses\\Ryerson Courses\\4W CPS 888 Software Engineering\\Project\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
+      "packagesPath": "C:\\Users\\Pierce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pierce\\OneDrive\\Courses\\Ryerson Courses\\4W CPS 888 Software Engineering\\Project\\Kan-Do\\Kan-Do\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\harki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pierce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
