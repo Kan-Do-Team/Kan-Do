@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kan_Do
+namespace Kan_Do.KanbanBoard
 {
     public class KanbanColumn
     {
@@ -15,7 +15,6 @@ namespace Kan_Do
         private string mcolumnName;
         private int mcolumnNumber;
         private int mcolumnId;
-        private bool misDelete;
 
         //Name of the column that should appear in the UI 
         public string ColumnName
@@ -36,13 +35,6 @@ namespace Kan_Do
         {
             get { return mcolumnId; }
             set { mcolumnId = value; }
-        }
-
-        //The IsDelete helps determine if the delete button was clicked in the UI for the certain list element
-        public bool IsDelete
-        {
-            get { return misDelete; }
-            set { misDelete = value;}
         }
     }
 }

@@ -37,3 +37,4 @@ C:\Users\harki\Documents1\GitHub\Kan-Do\Kan-Do\obj\Debug\net4.8-windows\Kan-Do.c
 C:\Users\harki\Documents1\GitHub\Kan-Do\Kan-Do\obj\Debug\net4.8-windows\Kan-Do.csproj.CopyComplete
 C:\Users\harki\Documents1\GitHub\Kan-Do\Kan-Do\obj\Debug\net4.8-windows\Kan-Do.exe
 C:\Users\harki\Documents1\GitHub\Kan-Do\Kan-Do\obj\Debug\net4.8-windows\Kan-Do.pdb
+C:\Users\harki\Documents1\GitHub\Kan-Do\Kan-Do\obj\Debug\net4.8-windows\GeneratedInternalTypeHelper.g.cs

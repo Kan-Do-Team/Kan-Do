@@ -31,9 +31,9 @@ namespace Kan_Do.KanbanBoard
         //Default will be To Do, Doing and Done
         public void FillInitialColumns()
         {
-            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1, IsDelete = false });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2, IsDelete = false });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3, IsDelete = false });
+            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1});
+            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3 });
             mcolId = 3;
         }
 
@@ -64,7 +64,7 @@ namespace Kan_Do.KanbanBoard
                 //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
 
                 //Add a new column element to the list 
-                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId, IsDelete = false });
+                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId});
             }
             catch (Exception ex)
             {
@@ -75,8 +75,13 @@ namespace Kan_Do.KanbanBoard
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
         public void deleteColumn(int columnnumber)
         {
-            //Find the element in the list that has the corresponding columnnumber
+            try
+            { 
+                //Remove the element at the specified columnnumber 
+                boardColumns.RemoveAt(columnnumber);
+            }
 
+            catch(Exception ex) { System.Diagnostics.Debug.WriteLine(ex.ToString()); }
 
         }
 

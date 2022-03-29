@@ -35,7 +35,7 @@
             <StackPanel Orientation="Vertical">
             <ItemsControl Name="ColumnsList">
                 <ItemsControl.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate DataType="{x:Type local:KanbanColumn}">
                       <Grid>
                          <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -52,18 +52,8 @@
                         <!--StackPanel Grid.Row = "1">
                         </StackPanel> -->
                          <StackPanel Grid.Row="2" Height="30" Orientation="Horizontal">
-                            <Button x:Name="RemoveColumnButton" Height="30" Width="50" Content="Remove" HorizontalAlignment="Right" Click="DeleteColumn">
-                               <Button.Resources>
-                                   <Style x:Key="Triggers" TargetType="Button">
-                                      <Style.Triggers>
-                                          <Trigger Property="IsPressed" Value="True">
-                                             <Setter Property="{Binding IsDelete}" Value="True"/>
-                                          </Trigger>
-                                      </Style.Triggers>
-                                   </Style>
-                               </Button.Resources>
-                           </Button>
-                        </StackPanel>
+                                    <Button x:Name="RemoveColumnButton" Tag="{Binding}" Height="20" Width="50" Content="Remove" HorizontalAlignment="Right" Click="DeleteColumn"/>
+                         </StackPanel>
                       </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
