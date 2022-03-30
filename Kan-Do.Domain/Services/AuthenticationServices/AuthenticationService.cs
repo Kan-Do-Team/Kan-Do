@@ -23,6 +23,11 @@ namespace Kan_Do.Domain.Services.AuthenticationServices
         {
             Account storedAccount = await _accountService.GetByEmail(email);
 
+            if (storedAccount == null)
+            {
+                throw new UserNotFoundException(email);
+            }
+            
             PasswordVerificationResult passwordsResult = _passwordHasher.VerifyHashedPassword(storedAccount.AccountHolder.PasswordHash, password);
 
             if (passwordsResult != PasswordVerificationResult.Success)

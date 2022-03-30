@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1x+4w2Kr6hQMRnA1VrHTyXX7+NcvlAs+Rmt23iT+wTJY2iejHXaB8q3F7aUDpx+ue/JfVSqqoAPd70Zz6lMyhg==",
+  "dgSpecHash": "kRmsuyNYI0C03GK3U19+RYvZkenZlKKCgttuaJs0pJpkfcQkSyIEdGWniRD1NA7ufkz3hov9Y4f7RNfPbhLY6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Nasir\\.nuget\\packages\\simplemodal.wpf\\1.0.0\\simplemodal.wpf.1.0.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
