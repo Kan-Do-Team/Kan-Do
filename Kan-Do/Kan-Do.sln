@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kan-Do", "Kan-Do.csproj", "{5CE65219-66E5-45DB-88F6-4144BCE50D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kan-Do", "Kan-Do.csproj", "{5CE65219-66E5-45DB-88F6-4144BCE50D24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37C93835-8BB8-44F4-B334-48A0E6C7DE1D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

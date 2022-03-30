@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wQBvXjiP1efqoOD27SQlTzg9/WG38RzFIS3742xMvYn0DjRepgQqIzN2Dw/bAuXdNIrDOdtAIW/rPAfDtN+hKA==",
+  "dgSpecHash": "OMBji5qDnXUfCX9PvF3YiFoZgf1s/OMQ91RQmilgKCE/8YzFOtNV7dt3ZTXOV9DyS/yYd0j/T/ugcGV0cY5ykg==",
   "success": true,
   "projectFilePath": "C:\\Users\\harki\\Documents1\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\harki\\.nuget\\packages\\extended.wpf.toolkit\\4.2.0\\extended.wpf.toolkit.4.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

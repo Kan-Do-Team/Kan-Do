@@ -53,7 +53,7 @@ namespace Kan_Do {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kan-Do;V1.0.0.0;component/loginpage/loginpageview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kan-Do;component/loginpage/loginpageview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\LoginPage\LoginPageView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

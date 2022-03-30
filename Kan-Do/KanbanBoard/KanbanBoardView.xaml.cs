@@ -20,9 +20,27 @@ namespace Kan_Do.KanbanBoard
     /// </summary>
     public partial class KanbanBoardView : Page
     {
+        public KanbanBoardViewModel KBoardVM; 
         public KanbanBoardView()
         {
             InitializeComponent();
+            KBoardVM = new KanbanBoardViewModel();
+            ColumnsList.ItemsSource = KBoardVM.boardColumns;
+        }
+
+        private void AddColumn(object sender, RoutedEventArgs e)
+        {
+            //Call the function in the ViewModel that adds a column
+            KBoardVM.addColumn();
+        }
+
+        private void DeleteColumn(object sender, RoutedEventArgs e)
+        {
+            //Get the index of the element of the list that the Remove button was selected in
+            KanbanColumn kcol = ((Button)sender).Tag as KanbanColumn;
+
+            //Call the function in the VM, that will remove the element at the index 
+            KBoardVM.deleteColumn(kcol.ColumnNumber);
         }
     }
 }
