@@ -23,3 +23,78 @@ C:\Users\Pierce\OneDrive\Courses\Ryerson Courses\4W CPS 888 Software Engineering
 C:\Users\Pierce\OneDrive\Courses\Ryerson Courses\4W CPS 888 Software Engineering\Project\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.pdb
 C:\Users\Pierce\OneDrive\Courses\Ryerson Courses\4W CPS 888 Software Engineering\Project\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.genruntimeconfig.cache
 C:\Users\Pierce\OneDrive\Courses\Ryerson Courses\4W CPS 888 Software Engineering\Project\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\ref\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.exe
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.deps.json
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.runtimeconfig.json
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.pdb
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.AssemblyReference.cache
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\CardDetailWindow\CardDetailWindow.g.cs
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\KanbanBoard\KanbanBoardView.g.cs
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\LoginPage\LoginPageView.g.cs
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do_MarkupCompile.cache
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do_MarkupCompile.lref
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\CardDetailWindow\CardDetailWindow.baml
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\KanbanBoard\KanbanBoardView.baml
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\LoginPage\LoginPageView.baml
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.g.resources
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.AssemblyInfoInputs.cache
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.AssemblyInfo.cs
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.CoreCompileInputs.cache
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\refint\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.pdb
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.genruntimeconfig.cache
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\ref\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\harki\Documents1\Kan-Do\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.CopyComplete
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.exe
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.deps.json
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.runtimeconfig.json
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Kan-Do.pdb
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Extras.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Platform.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.AssemblyReference.cache
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\CardDetailWindow\CardDetailWindow.g.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\KanbanBoard\KanbanBoardView.g.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\LoginPage\LoginPageView.g.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do_MarkupCompile.cache
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do_MarkupCompile.lref
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\CardDetailWindow\CardDetailWindow.baml
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\KanbanBoard\KanbanBoardView.baml
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\LoginPage\LoginPageView.baml
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.g.resources
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.AssemblyInfoInputs.cache
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.AssemblyInfo.cs
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.CoreCompileInputs.cache
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.csproj.CopyComplete
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\refint\Kan-Do.dll
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.pdb
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.genruntimeconfig.cache
+C:\Users\harki\Documents1\Kan-Do\Version 2\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\ref\Kan-Do.dll

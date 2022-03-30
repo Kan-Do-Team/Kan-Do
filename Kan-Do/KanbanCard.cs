@@ -17,7 +17,7 @@ namespace Kan_Do
         private int mpriority;
         private string mtaskDescription;
         private string massignee;
-        private string mcolumnId;
+        private int mcolumnId;
 
         public string CardName
         {
@@ -61,7 +61,7 @@ namespace Kan_Do
             set { massignee = value; }
         }
 
-        public string ColumnId
+        public int ColumnId
         {
             get { return mcolumnId; }
             set { mcolumnId = value; }

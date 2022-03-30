@@ -1,8 +1,32 @@
 {
   "version": 2,
-  "dgSpecHash": "UBZZjn5VlzCLginPlB3kYl3muOTA77HFpWCXaBXQ7A9ZVvZZup3wv70moX1YcAmNs/aJlaoz9F/Fqhb1mLL8XQ==",
+  "dgSpecHash": "5uwVZa+5EWA3X95PZslNwxa5jjnwMwJNeF3QOzhonQsebXQTJk372UiO0Yivz+NtOBVrvVKRsqdI08iire7cuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pierce\\OneDrive\\Courses\\Ryerson Courses\\4W CPS 888 Software Engineering\\Project\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\harki\\Documents1\\Kan-Do\\Version 2\\Kan-Do\\Kan-Do\\Kan-Do.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harki\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512",
+    "C:\\Users\\harki\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Extended.Wpf.Toolkit 4.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MvvmLightLibs",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

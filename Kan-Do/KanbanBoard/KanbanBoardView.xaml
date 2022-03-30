@@ -3,12 +3,83 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Kan_Do.KanbanBoard"
+      xmlns:wpfx="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:local="clr-namespace:Kan_Do.KanbanBoard" xmlns:wpfx1="http://schemas.xceed.com/wpf/xaml/avalondock"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KanbanBoardView">
 
     <Grid>
-        
+        <!--Row definitions for the entire view-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Grid element for the top panel of the board-->
+        <Grid x:Name="ControlsPanel" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+            <!-- TODO: Route button to the HomePage-->
+            <Button x:Name="HomeButton" Height="40" Width="60" Grid.Row="0" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
+        </Grid>
+
+        <!--Grid for the Columns-->
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <ItemsControl Name="ColumnsList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <!--Stackpanel will have the column name, the column options button "..." and the card options button []-->
+                                <StackPanel Grid.Row="0" Height="40" Orientation="Horizontal">
+                                    <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
+                                    <!--First dropdown button is for the Card filtering/sorting commands -->
+                                    <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">[ ]</wpfx1:DropDownButton>
+                                    <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Command="{Binding ProcessCardDetails}"/>
+                                    <!--Second dropdown button is for the Column alteration functionality -->
+                                    <wpfx1:DropDownButton Width="25" Height="20" HorizontalAlignment="Right">...</wpfx1:DropDownButton>
+                                </StackPanel>
+                                <!-- TO DO: The ItemsControl for the CardList will go heree-->
+                                <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" Height="110">
+                                    <ItemsControl Name="CardList" Grid.Row="1" ItemsSource="{Binding column_cards}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel x:Name="CardInfo" Orientation="Vertical">
+                                                    <Label x:Name="CardName" Height="25" Width="70" Content="{Binding CardName}"></Label>
+                                                    <Label x:Name="CardDueDate" Height="25" Width="70" Content="{Binding DueDate}"></Label>
+                                                    <Label x:Name="CardPriority" Height="25" Width="50" Content="{Binding Priority}"></Label>
+                                                    <Label x:Name="CardAssignee" Height="25" Width="70" Content="{Binding Assignee}"></Label>
+                                                    <Label x:Name="TestEventReturn" Height="25" Width="70"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Height="30" Orientation="Horizontal">
+                                    <Button x:Name="RemoveColumnButton" Tag="{Binding}" Height="20" Width="50" Content="Remove" HorizontalAlignment="Right" Click="DeleteColumn"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="1"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Page>
