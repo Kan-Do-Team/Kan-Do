@@ -76,9 +76,22 @@ namespace Kan_Do.KanbanBoard
         public void deleteColumn(int columnnumber)
         {
             try
-            { 
+            {
+                //Start at the index after the one that will be removed
+                //Change the columnnumber to columnnumber that is passed to the function
+
+                //Change the columnnumber values of entries after the index that will be removed 
+                /*int newcolnum = columnnumber;
+                for(int i = columnnumber+1; i < boardColumns.Count; i++)
+                {
+                    KanbanColumn kcol = boardColumns.Item[i];
+                    kcol.ColumnNumber = newcolnum;
+                    boardColumns.Item[i] = kcol;
+                    newcolnum++;
+                }*/
+
                 //Remove the element at the specified columnnumber 
-                boardColumns.RemoveAt(columnnumber);
+                boardColumns.RemoveAt(columnnumber); 
             }
 
             catch(Exception ex) { System.Diagnostics.Debug.WriteLine(ex.ToString()); }

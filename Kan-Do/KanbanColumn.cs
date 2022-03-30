@@ -16,6 +16,12 @@ namespace Kan_Do.KanbanBoard
         private int mcolumnNumber;
         private int mcolumnId;
 
+        public KanbanColumn() {
+            ColumnName = "";
+            ColumnNumber = 0;
+            ColumnId = 0;
+        }
+
         //Name of the column that should appear in the UI 
         public string ColumnName
         {
