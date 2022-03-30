@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kan_Do.KanbanBoard
+namespace Kan_Do.WPF.KanbanBoard
 {
     internal class KanbanBoardModel
     {

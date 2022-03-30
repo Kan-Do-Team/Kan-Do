@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kan_Do.CardDetailWindow
+namespace Kan_Do.WPF.ViewModels
 {
     internal class CardDetailWindowViewModel
     {

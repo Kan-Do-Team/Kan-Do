@@ -1,5 +1,6 @@
 ﻿using Kan_Do.Domain.Models;
 using Kan_Do.Domain.Services;
+using Kan_Do.EntityFramework.Services.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -13,33 +14,22 @@ namespace Kan_Do.EntityFramework.Services
     public class GenericDataService<T> : IDataService<T> where T : DomainObject
     {
         private readonly KanDoDbContextFactory _dbContextFactory;
+        private readonly NonQueryDataService<T> _nonQueryDataService;
 
         public GenericDataService(KanDoDbContextFactory dbContextFactory)
         {
             _dbContextFactory = dbContextFactory;
+            _nonQueryDataService = new NonQueryDataService<T>(dbContextFactory);
         }
 
         public async Task<T> Create(T entity)
         {
-            using (KanDoDbContext context = _dbContextFactory.CreateDbContext())
-            {
-                EntityEntry<T> createdResult = await context.Set<T>().AddAsync(entity);
-                await context.SaveChangesAsync();
-
-                return createdResult.Entity;
-            }
+            return await _nonQueryDataService.Create(entity);
         }
 
         public async Task<bool> Delete(int id)
         {
-            using (KanDoDbContext context = _dbContextFactory.CreateDbContext())
-            {
-                T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
-                context.Set<T>().Remove(entity);
-                await context.SaveChangesAsync();
-
-                return true;
-            }
+            return await _nonQueryDataService.Delete(id);
         }
 
         public async Task<T> Get(int id)
@@ -55,21 +45,14 @@ namespace Kan_Do.EntityFramework.Services
         {
             using (KanDoDbContext context = _dbContextFactory.CreateDbContext())
             {
-                IEnumerable<T> entity = await context.Set<T>().ToListAsync();
-                return entity;
+                IEnumerable<T> entities = await context.Set<T>().ToListAsync();
+                return entities;
             }
         }
 
         public async Task<T> Update(int id, T entity)
         {
-            using (KanDoDbContext context = _dbContextFactory.CreateDbContext())
-            {
-                entity.Id = id;
-                context.Set<T>().Update(entity);
-                await context.SaveChangesAsync();
-
-                return entity;
-            }
+            return await _nonQueryDataService.Update(id, entity);
         }
     }
 }

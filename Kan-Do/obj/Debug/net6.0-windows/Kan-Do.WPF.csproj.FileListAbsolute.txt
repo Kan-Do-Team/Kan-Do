@@ -60,3 +60,9 @@ C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.WP
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.WPF.genruntimeconfig.cache
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\ref\Kan-Do.WPF.dll
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Views\HomeView.g.cs
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Views\HomeView.baml
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\ModalControl.dll

@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kan_Do.KanbanBoard
+namespace Kan_Do.WPF.Views
 {
     /// <summary>
     /// Interaction logic for KanbanBoardView.xaml
     /// </summary>
-    public partial class KanbanBoardView : Page
+    public partial class KanbanBoardView : UserControl
     {
         public KanbanBoardView()
         {

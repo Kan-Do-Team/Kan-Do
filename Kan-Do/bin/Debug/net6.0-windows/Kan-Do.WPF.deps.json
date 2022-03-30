@@ -11,7 +11,8 @@
           "Kan-Do.Domain": "1.0.0",
           "Kan-Do.EntityFramework": "1.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
+          "SimpleModal.WPF": "1.0.0"
         },
         "runtime": {
           "Kan-Do.WPF.dll": {}
@@ -313,6 +314,14 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
+      "SimpleModal.WPF/1.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/ModalControl.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -606,6 +615,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "SimpleModal.WPF/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dtTvUl6O2peKZz2oCh5Y6mRjYL+q/Izxm6+z/Nzdpbcgxdo/qTD39stwegu/sY0uBTAYGJEy2P9X8mwpOMM+rw==",
+      "path": "simplemodal.wpf/1.0.0",
+      "hashPath": "simplemodal.wpf.1.0.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
