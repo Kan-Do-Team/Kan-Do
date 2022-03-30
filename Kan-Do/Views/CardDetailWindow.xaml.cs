@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Kan_Do.CardDetailWindow
+namespace Kan_Do.WPF.Views
 {
     /// <summary>
     /// Interaction logic for CardDetailWindow.xaml

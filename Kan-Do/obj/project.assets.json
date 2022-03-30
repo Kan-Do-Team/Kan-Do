@@ -378,6 +378,18 @@
           }
         }
       },
+      "SimpleModal.WPF/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/ModalControl.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ModalControl.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1331,6 +1343,18 @@
         "version.txt"
       ]
     },
+    "SimpleModal.WPF/1.0.0": {
+      "sha512": "dtTvUl6O2peKZz2oCh5Y6mRjYL+q/Izxm6+z/Nzdpbcgxdo/qTD39stwegu/sY0uBTAYGJEy2P9X8mwpOMM+rw==",
+      "type": "package",
+      "path": "simplemodal.wpf/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/ModalControl.dll",
+        "simplemodal.wpf.1.0.0.nupkg.sha512",
+        "simplemodal.wpf.nuspec"
+      ]
+    },
     "System.Collections.Immutable/6.0.0": {
       "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
@@ -1831,7 +1855,8 @@
       "Kan-Do.Domain >= 1.0.0",
       "Kan-Do.EntityFramework >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.3",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
+      "SimpleModal.WPF >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1887,6 +1912,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.3, )"
+          },
+          "SimpleModal.WPF": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [

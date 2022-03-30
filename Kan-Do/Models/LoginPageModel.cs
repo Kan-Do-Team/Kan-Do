@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kan_Do.LoginPage
+namespace Kan_Do.WPF.LoginPage
 {
     internal class LoginPageModel
     {

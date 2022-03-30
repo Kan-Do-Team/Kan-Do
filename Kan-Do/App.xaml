@@ -1,14 +1,30 @@
-﻿<Application x:Class="Kan_Do.App"
+﻿<Application x:Class="Kan_Do.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Kan_Do"
-             StartupUri="Views/LoginPageView.xaml">
+             xmlns:viewmodels="clr-namespace:Kan_Do.WPF.ViewModels"
+             xmlns:views="clr-namespace:Kan_Do.WPF.Views"
+             xmlns:local="clr-namespace:Kan_Do.WPF">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Common.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:KanbanBoardViewModel}">
+                <views:KanbanBoardView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:LoginPageViewModel}">
+                <views:LoginPageView LoginCommand="{Binding LoginCommand}"/>
+            </DataTemplate>
+
         </ResourceDictionary>
-        
-     </Application.Resources>
+
+       
+
+    </Application.Resources>
 </Application>

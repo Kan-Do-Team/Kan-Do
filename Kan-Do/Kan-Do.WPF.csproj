@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>Kan_Do</RootNamespace>
+    <RootNamespace>Kan_Do.WPF</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -11,16 +11,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+    <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Kan-Do.Domain\Kan-Do.Domain.csproj" />
     <ProjectReference Include="..\Kan-Do.EntityFramework\Kan-Do.EntityFramework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CardDetailWindow\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
 
 </Project>
