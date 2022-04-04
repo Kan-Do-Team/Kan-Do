@@ -27,5 +27,6 @@ namespace Kan_Do.WPF.State.Navigators
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
+    
     }
 }
