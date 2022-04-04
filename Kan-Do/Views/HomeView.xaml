@@ -19,6 +19,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Line X1="0" Y1="0" X2="800" Y2="300" StrokeThickness="100" />
+        <Line X1="0" Y1="0" X2="0" Y2="1600" StrokeThickness="100" />
+
         <Button Margin="5" Padding="10" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="top" Command="{Binding NavigateToBoard}">AddBoard
             <Button.Resources>
                 <Style TargetType="Border">
