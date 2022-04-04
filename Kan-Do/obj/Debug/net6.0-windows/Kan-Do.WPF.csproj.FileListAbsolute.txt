@@ -66,3 +66,7 @@ C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Views\Hom
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\ModalControl.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
