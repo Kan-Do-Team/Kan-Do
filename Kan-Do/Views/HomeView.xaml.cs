@@ -21,6 +21,9 @@ namespace Kan_Do.WPF.Views
     public partial class HomeView : UserControl
 
     {
+        public ICommand NavigateToBoard { get;}
+
+
         public HomeView()
         {
             InitializeComponent();

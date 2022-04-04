@@ -15,8 +15,6 @@ namespace Kan_Do.WPF.ViewModels
     {
         private string _email;
 
-     
-
         public string Email
         {
             get { return _email; }

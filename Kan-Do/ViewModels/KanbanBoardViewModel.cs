@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kan_Do.WPF.State.Navigators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace Kan_Do.WPF.ViewModels
 {
     public class KanbanBoardViewModel : ViewModelBase
     {
+
+        public KanbanBoardViewModel()
+        {
+        }
     }
 }
