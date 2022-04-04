@@ -14,7 +14,6 @@ namespace Kan_Do.WPF.Commands
     {
         private readonly LoginPageViewModel _loginViewModel;
         private readonly IAuthenticator _authenticator;
-        private readonly INavigator _navigator;
         private readonly IRenavigator _renavigator;
 
         public LoginCommand(LoginPageViewModel loginViewModel, IAuthenticator authenticator, IRenavigator renavigator)
