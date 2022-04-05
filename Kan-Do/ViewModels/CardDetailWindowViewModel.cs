@@ -33,6 +33,17 @@ namespace Kan_Do.WPF.ViewModels
         //Function to Add a card 
         public void SaveCardDetails()
         {
+            string mcardName = "The one and only card";
+            
+            int mcardID = 1;
+            DateTime mdueDate = DateTime.Today;
+            
+            DateTime mdateCreated = DateTime.Today;
+            int mpriority = 1;
+            string mtaskDescription = "A shample card";
+            string massignee = "Michael";
+            int mcolumnId = 1;
+            
             //Compress the details to send to the KanbanBoardViewModel
             //var CardRelayModel = CompressCardInfo();
             //Messenger.Default.Send<SaveCardDetailsCommand>(CardRelayModel);
