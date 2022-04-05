@@ -186,11 +186,27 @@ namespace Kan_Do.WPF.ViewModels
         {
             try
             {
+                if (columnnumber > 0)
+                {
+                    boardColumns[columnnumber].ColumnNumber = columnnumber - 1;
+                    boardColumns[columnnumber - 1].ColumnNumber = columnnumber;
+                    boardColumns[columnnumber].ColumnId = columnnumber;
+                    boardColumns[columnnumber - 1].ColumnId = columnnumber + 1;
+                    boardColumns.Move(columnnumber, columnnumber - 1);
+                }
                 boardColumns.Move(columnnumber, columnnumber - 1);
                 System.Diagnostics.Debug.WriteLine("Shift column left function success");
             }
 
-            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.ToString()); }
+            catch (Exception ex) { 
+                if (columnnumber > 0)
+                    {
+                        boardColumns[columnnumber].ColumnNumber = columnnumber;
+                        boardColumns[columnnumber - 1].ColumnNumber = columnnumber - 1;
+                        boardColumns[columnnumber].ColumnId = columnnumber + 1;
+                        boardColumns[columnnumber - 1].ColumnId = columnnumber;
+                    }
+                System.Diagnostics.Debug.WriteLine(ex.ToString()); }
 
         }
 
@@ -198,12 +214,27 @@ namespace Kan_Do.WPF.ViewModels
         {
             try
             {
+                if (columnnumber < (boardColumns.Count() - 1)) {
+                    boardColumns[columnnumber].ColumnNumber = columnnumber + 1;
+                    boardColumns[columnnumber + 1].ColumnNumber = columnnumber;
+                    boardColumns[columnnumber].ColumnId = columnnumber + 2;
+                    boardColumns[columnnumber + 1].ColumnId = columnnumber + 1;
+                    boardColumns.Move(columnnumber, columnnumber + 1);
+                }
                 boardColumns.Move(columnnumber, columnnumber + 1);
                 System.Diagnostics.Debug.WriteLine("Shift column right function success");
             }
 
-            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.ToString()); }
-
+            catch (Exception ex) { 
+                if (columnnumber < (boardColumns.Count() - 1))
+                {
+                    boardColumns[columnnumber].ColumnNumber = columnnumber;
+                    boardColumns[columnnumber + 1].ColumnNumber = columnnumber + 1;
+                    boardColumns[columnnumber].ColumnId = columnnumber + 1;
+                    boardColumns[columnnumber + 1].ColumnId = columnnumber + 2;
+                }
+                System.Diagnostics.Debug.WriteLine(ex.ToString()); 
+                }
         }
 
         //public void sortColumn(int columnid, string sortType -- could also be an int, rep the type of sort)
