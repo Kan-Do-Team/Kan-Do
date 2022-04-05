@@ -13,9 +13,10 @@
             <RowDefinition Height="75"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        
         <Line X1="0" Y1="0" X2="800" Y2="0" StrokeThickness="0" />
-        <Line Grid.Row="1" X1="0" Y1="0" X2="0" Y2="375" StrokeThickness="0" />
+        <Line Grid.Row="1" X1="0" Y1="0" X2="0" Y2="585" StrokeThickness="0" />
+        
         <!--Grid element for the top panel of the board-->
         <Grid x:Name="ControlsPanel" Grid.Row="0">
             <Grid.RowDefinitions>
@@ -46,8 +47,8 @@
                                     <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
                                     <!--Shift Left Button -->
                                     <Button x:Name="ShiftLeftButton" Tag="{Binding}" Width="25" Height="20" Content="&lt;-" HorizontalAlignment="Right" Click="ShiftColumnLeft"/>
-                                    <!--Add Card Button -->
-                                    <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
+                                    <!--Add Card Button use either NewCard or AddCard-->
+                                    <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="AddCard"/>
                                     <!--Shift Right Button -->
                                     <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content="-&gt;" HorizontalAlignment="Right" Click="ShiftColumnRight"/>
                                 </StackPanel>

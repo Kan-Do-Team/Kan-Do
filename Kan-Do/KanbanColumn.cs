@@ -28,15 +28,8 @@ namespace Kan_Do.WPF
             ColumnNumber = 0;
             ColumnId = 0;
             column_cards = new ObservableCollection<KanbanCard>();
-            FillInitialCards();
         }
 
-        //Fill initial cards
-        private void FillInitialCards()
-        {
-            column_cards.Add(new KanbanCard { CardName = "sample", CardID = 1, DueDate = DateTime.Today, Priority = 1, TaskDescription = "Sample task description", Assignee = "Harkiran", ColumnId = this.ColumnId });
-        }
-        
         //Sample card
         public void AddCard(String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee)
         {
@@ -47,7 +40,7 @@ namespace Kan_Do.WPF
         {
             column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = this.ColumnId });
         }
-        
+
         //Name of the column that should appear in the UI 
         public string ColumnName
         {
