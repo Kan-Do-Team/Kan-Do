@@ -105,6 +105,27 @@ namespace Kan_Do.WPF.ViewModels
                 System.Diagnostics.Debug.WriteLine("Add column function exception:", ex.ToString()); ;
             }
         }
+        
+        public void addCard(/*String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee, */int columnNumber)
+        {
+            try
+            {
+                string cardName = "The one and only card";
+                int cardID = 1;
+                DateTime dueDate = DateTime.Today;
+                DateTime dateCreated = DateTime.Today;
+                int priority = 1;
+                string taskDescription = "A shample card";
+                string assignee = "Michael";
+                int columnId = 1;
+                ObservableCollection<KanbanCard>  columnCardList = boardColumns[columnNumber].column_cards;
+                boardColumns[columnNumber].AddCard(cardName,  cardID,  dueDate,  priority,  taskDescription,  assignee);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Add column function exception:", ex.ToString()); ;
+            }
+        }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
         public void deleteColumn(int columnnumber)
