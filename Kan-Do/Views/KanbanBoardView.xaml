@@ -52,7 +52,7 @@
                                     <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content="-&gt;" HorizontalAlignment="Right" Click="ShiftColumnRight"/>
                                 </StackPanel>
                                 <!-- TO DO: The ItemsControl for the CardList will go heree-->
-                                <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" Height="110">
+                                <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" Height="660">
                                     <ItemsControl Name="CardList" Grid.Row="1" ItemsSource="{Binding column_cards}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
