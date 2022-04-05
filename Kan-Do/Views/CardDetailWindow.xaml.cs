@@ -45,6 +45,7 @@ namespace Kan_Do.WPF.Views
         //Once the Card object has been received by the parent, then it will close this view
         private void RecieveInputMessage(KanbanCard cardDetails)
         {
+            KCardVM.SaveCardDetails();
             this.Close();
         }
 
