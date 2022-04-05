@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
-using Kan_Do.WPF.ViewModels;
 using Kan_Do.WPF.Views;
 
 namespace Kan_Do.WPF.ViewModels
@@ -105,7 +104,7 @@ namespace Kan_Do.WPF.ViewModels
                 System.Diagnostics.Debug.WriteLine("Add column function exception:", ex.ToString()); ;
             }
         }
-        
+
         public void addCard(/*String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee, */int columnNumber)
         {
             try
@@ -118,8 +117,8 @@ namespace Kan_Do.WPF.ViewModels
                 string taskDescription = "A shample card";
                 string assignee = "Michael";
                 int columnId = 1;
-                ObservableCollection<KanbanCard>  columnCardList = boardColumns[columnNumber].column_cards;
-                boardColumns[columnNumber].AddCard(cardName,  cardID,  dueDate,  priority,  taskDescription,  assignee);
+                ObservableCollection<KanbanCard> columnCardList = boardColumns[columnNumber].column_cards;
+                boardColumns[columnNumber].AddCard(cardName, cardID, dueDate, priority, taskDescription, assignee);
             }
             catch (Exception ex)
             {
@@ -194,19 +193,23 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber - 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber - 1);
                 }
-                boardColumns.Move(columnnumber, columnnumber - 1);
+
+
+
                 System.Diagnostics.Debug.WriteLine("Shift column left function success");
             }
 
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 if (columnnumber > 0)
-                    {
-                        boardColumns[columnnumber].ColumnNumber = columnnumber;
-                        boardColumns[columnnumber - 1].ColumnNumber = columnnumber - 1;
-                        boardColumns[columnnumber].ColumnId = columnnumber + 1;
-                        boardColumns[columnnumber - 1].ColumnId = columnnumber;
-                    }
-                System.Diagnostics.Debug.WriteLine(ex.ToString()); }
+                {
+                    boardColumns[columnnumber].ColumnNumber = columnnumber;
+                    boardColumns[columnnumber - 1].ColumnNumber = columnnumber - 1;
+                    boardColumns[columnnumber].ColumnId = columnnumber + 1;
+                    boardColumns[columnnumber - 1].ColumnId = columnnumber;
+                }
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
 
         }
 
@@ -214,18 +217,22 @@ namespace Kan_Do.WPF.ViewModels
         {
             try
             {
-                if (columnnumber < (boardColumns.Count() - 1)) {
+                if (columnnumber < (boardColumns.Count() - 1))
+                {
                     boardColumns[columnnumber].ColumnNumber = columnnumber + 1;
                     boardColumns[columnnumber + 1].ColumnNumber = columnnumber;
                     boardColumns[columnnumber].ColumnId = columnnumber + 2;
                     boardColumns[columnnumber + 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber + 1);
                 }
-                boardColumns.Move(columnnumber, columnnumber + 1);
+
+
+
                 System.Diagnostics.Debug.WriteLine("Shift column right function success");
             }
 
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 if (columnnumber < (boardColumns.Count() - 1))
                 {
                     boardColumns[columnnumber].ColumnNumber = columnnumber;
@@ -233,9 +240,12 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 1;
                     boardColumns[columnnumber + 1].ColumnId = columnnumber + 2;
                 }
-                System.Diagnostics.Debug.WriteLine(ex.ToString()); 
-                }
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
+
         }
+
+
 
         //public void sortColumn(int columnid, string sortType -- could also be an int, rep the type of sort)
 
