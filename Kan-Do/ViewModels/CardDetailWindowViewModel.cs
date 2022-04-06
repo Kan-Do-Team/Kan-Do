@@ -21,7 +21,7 @@ namespace Kan_Do.WPF.ViewModels
         {
             KCard = new KanbanCard();
             ReturnCardDetails = new GalaSoft.MvvmLight.Command.RelayCommand(ProcessCardDetails);
-            Messenger.Default.Register<KanbanCard>(this, (action) => RecieveCardInfo(action));
+            Messenger.Default.Register<CardDetailWindowViewModel>(this, (action) => RecieveCardInfo(action));
         }
 
         public string cardName
@@ -118,14 +118,14 @@ namespace Kan_Do.WPF.ViewModels
 
         private void ProcessCardDetails()
         {
-            var CRelayModel = KCard;
-            Messenger.Default.Send<KanbanCard>(CRelayModel);
+            var CRelayModel = this;
+            Messenger.Default.Send<CardDetailWindowViewModel>(CRelayModel);
         }
 
-        private object RecieveCardInfo(KanbanCard context)
+        private object RecieveCardInfo(CardDetailWindowViewModel context)
         {
             //Add the reference of the columnId
-            KCard.ColumnId = context.ColumnId;
+            KCard.ColumnId = context.ColumnID;
             return null;
         }
 

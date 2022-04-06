@@ -2018,19 +2018,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Intel-TUF\\.nuget\\packages\\": {}
+    "C:\\Users\\Michael\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
       "projectName": "Kan-Do.WPF",
-      "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
-      "packagesPath": "C:\\Users\\Intel-TUF\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\obj\\",
+      "projectPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
+      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Intel-TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2044,11 +2044,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
-              "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
+            "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+              "projectPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
             },
-            "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
-              "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj"
+            "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
+              "projectPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj"
             }
           }
         }

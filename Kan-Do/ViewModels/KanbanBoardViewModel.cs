@@ -65,12 +65,12 @@ namespace Kan_Do.WPF.ViewModels
 
         private void FetchCardDetails(object CommandParam)
         {
-            var SelectedCardInfo = new KanbanCard
+            var SelectedCardInfo = new CardDetailWindowViewModel
             {
-                ColumnId = (int)(CommandParam)
+                ColumnID = (int)(CommandParam)
             };
 
-            var CardWindow = new CardDetailWindow(SelectedCardInfo.ColumnId);
+            var CardWindow = new CardDetailWindow(SelectedCardInfo.ColumnID);
             CardWindow.Show();
         }
 
