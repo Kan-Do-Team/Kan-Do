@@ -1,4 +1,5 @@
-﻿using Kan_Do.WPF.State.Authenticators;
+﻿using Kan_Do.Domain.Exceptions;
+using Kan_Do.WPF.State.Authenticators;
 using Kan_Do.WPF.State.Navigators;
 using Kan_Do.WPF.ViewModels;
 using System;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace Kan_Do.WPF.Commands
 {
-    public class LoginCommand : ICommand
+    public class LoginCommand : AsyncCommandBase
     {
         private readonly LoginPageViewModel _loginViewModel;
         private readonly IAuthenticator _authenticator;
@@ -23,20 +24,28 @@ namespace Kan_Do.WPF.Commands
             _renavigator = renavigator;
         }
 
-        public event EventHandler? CanExecuteChanged;
-
-        public bool CanExecute(object? parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
-            return true;
-        }
 
-        public async void Execute(object parameter)
-        {
-            bool success = await _authenticator.Login(_loginViewModel.Email, parameter.ToString());
-
-            if (success)
+            try
             {
+                await _authenticator.Login(_loginViewModel.Email, _loginViewModel.Password);
+
                 _renavigator.Renavigate();
+            }
+            catch (UserNotFoundException)
+            {
+
+                _loginViewModel.ErrorMessage = "Email does not exist.";
+            }
+            catch (InvalidPasswordException)
+            {
+
+                _loginViewModel.ErrorMessage = "Incorrect password.";
+            }
+            catch (Exception)
+            {
+                _loginViewModel.ErrorMessage = "Login Failed.";
             }
         }
     }
