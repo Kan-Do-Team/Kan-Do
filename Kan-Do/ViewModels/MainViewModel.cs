@@ -13,11 +13,11 @@ namespace Kan_Do.WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly IRootKanDoViewModelFactory _viewModelFactory;
+        private readonly IKanDoViewModelFactory _viewModelFactory;
         public INavigator Navigator { get; set; }
         public IAuthenticator Authenticator { get; }
         public ICommand UpdateCurrentViewModelCommand { get; }
-        public MainViewModel(INavigator navigator, IRootKanDoViewModelFactory viewModelFactory, IAuthenticator authenticator)
+        public MainViewModel(INavigator navigator, IKanDoViewModelFactory viewModelFactory, IAuthenticator authenticator)
         {
             Navigator = navigator;
             _viewModelFactory = viewModelFactory;
