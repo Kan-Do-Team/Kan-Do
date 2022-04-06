@@ -36,7 +36,7 @@ namespace Kan_Do.WPF.Views
         private void initView(int columnId)
         {
             KCardVM = new CardDetailWindowViewModel() { ColumnID = columnId };
-            DataContext = KCardVM;
+            this.DataContext = KCardVM;
             PriorityComboBx_Loaded();
             SetCreatedDate();
             Messenger.Default.Register<KanbanCard>(this, (Action) => RecieveInputMessage(Action));
@@ -45,7 +45,20 @@ namespace Kan_Do.WPF.Views
         //Once the Card object has been received by the parent, then it will close this view
         private void RecieveInputMessage(KanbanCard cardDetails)
         {
-            KCardVM.SaveCardDetails();
+            /*
+            //this.DataContext = cardDetails;
+            KCardVM.KCard.Assignee = cardDetails.Assignee;
+            KCardVM.KCard.CardID = cardDetails.CardID; 
+            KCardVM.KCard.CardName = cardDetails.CardName;
+            KCardVM.KCard.ColumnId = cardDetails.ColumnId;
+            KCardVM.KCard.DateCreated = cardDetails.DateCreated;
+            KCardVM.KCard.DueDate = cardDetails.DueDate;
+            KCardVM.KCard.Priority = cardDetails.Priority;
+            KCardVM.KCard.TaskDescription = cardDetails.TaskDescription;
+
+            KCardVM.SaveCardDetails(KCardVM.KCard.CardName, KCardVM.KCard.CardID, KCardVM.KCard.DueDate, KCardVM.KCard.Priority, KCardVM.KCard.TaskDescription, KCardVM.KCard.Assignee, KCardVM.KCard.CardID);
+            */
+            
             this.Close();
         }
 
@@ -64,13 +77,14 @@ namespace Kan_Do.WPF.Views
             PriorityComboBx.SelectedIndex = -1;
         }
 
-        //Populate DateCreated textbox with today's date 
+        //Populate DateCreated and DueDate textbox with today's date 
         private void SetCreatedDate()
         {
             //Generate the datetime for today, output to the UI and save in the viewmodel
             DateTime thisDay = DateTime.Today;
             DateCreatedTxtBx.Text = thisDay.ToString("D");
             KCardVM.KCard.DateCreated = thisDay;
+            //KCardVM.KCard.DueDate = thisDay;
         }
 
 

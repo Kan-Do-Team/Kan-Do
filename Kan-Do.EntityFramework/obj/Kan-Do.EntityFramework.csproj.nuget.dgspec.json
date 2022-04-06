@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {}
+    "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+    "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
         "projectName": "Kan-Do.Domain",
-        "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
-        "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+        "packagesPath": "C:\\Users\\Intel-TUF\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Intel-TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,17 +67,17 @@
         }
       }
     },
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
+    "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+        "projectUniqueName": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
         "projectName": "Kan-Do.EntityFramework",
-        "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
-        "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
+        "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\Intel-TUF\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Intel-TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,8 +91,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
-                "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
+              "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+                "projectPath": "C:\\Users\\Intel-TUF\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
               }
             }
           }

@@ -30,17 +30,6 @@ namespace Kan_Do.WPF
             column_cards = new ObservableCollection<KanbanCard>();
         }
 
-        //Sample card
-        public void AddCard(String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee)
-        {
-            column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = this.ColumnId });
-        }
-
-        public void GetCardDetail(String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee)
-        {
-            column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = this.ColumnId });
-        }
-
         //Name of the column that should appear in the UI 
         public string ColumnName
         {
