@@ -30,6 +30,6 @@
             <TextBox TextWrapping="Wrap" Text="Assignee:" TextAlignment="Left" Width="80" Height="27" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" IsReadOnly="True"/>
             <TextBox x:Name="AssigneeTextBx" Text="{Binding KCardVM.KCard.Assignee}" TextWrapping="Wrap" Width="97" Height="27" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <Button x:Name="SaveCardInfoBtn" Content="Save" Margin="80,290,500,40" Command="{Binding ReturnCardDetails}"/>
+        <Button x:Name="SaveCardInfoBtn" Content="Save" Margin="80,290,500,40" Command="{Binding ReturnCardDetails}" Click="SaveCardInfoBtn_Click"/>
     </Grid>
 </Window>

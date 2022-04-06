@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Kan_Do.WPF.Views;
+using Kan_Do.WPF.State.Navigators;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -29,6 +30,8 @@ namespace Kan_Do.WPF.ViewModels
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
 
+        //private readonly INavigator _navigator;
+
         //Constructor
         public KanbanBoardViewModel()
         {
@@ -39,6 +42,7 @@ namespace Kan_Do.WPF.ViewModels
 
             //Initialize child view model
             childViewModel = new CardDetailWindowViewModel();
+            //_navigator = navigator;
         }
 
         //Function that fills the initial column values in the UI 
