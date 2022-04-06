@@ -6,10 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Kan_Do.WPF.ViewModels
-{
+{ 
+    public delegate TViewModel CreateViewModel<TViewModel>() where TViewModel : ViewModelBase;
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+       
 
         protected void OnPropertyChanged(string propertyName)
         {

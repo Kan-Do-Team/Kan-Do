@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kan_Do.WPF.Views"
         xmlns:nav="clr-namespace:Kan_Do.WPF.State.Navigators"
         mc:Ignorable="d"
-        Height="300" Width="200"
+        Height="350" Width="200"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,15 +28,21 @@
             <PasswordBox x:Name="pbPassword" />
         </StackPanel>
 
-        <Button Grid.Row="2" Padding="8" Margin="10 20 10 10" Content="Login" Click="Login_Click" IsDefault="True">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-        </Button>
 
+        <StackPanel Grid.Row="2">
+            <Button Padding="8" Margin="10 20 10 10" Content="Login" Click="Login_Click" IsDefault="True">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        
+            <Button Margin="10 0 10 20" Content="Already have an account?" Background="Transparent" Foreground="Blue">
+            </Button>
 
+            <TextBlock HorizontalAlignment="Center" DataContext="{Binding ErrorMessageViewModel}" Foreground="Red" Text="{Binding Message}" Visibility="{Binding HasMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </StackPanel>
 
     </Grid>
 </UserControl>

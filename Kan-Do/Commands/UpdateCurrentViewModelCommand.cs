@@ -15,9 +15,9 @@ namespace Kan_Do.WPF.Commands
         public event EventHandler? CanExecuteChanged;
 
         private INavigator _navigator;
-        private readonly IRootKanDoViewModelFactory _viewModelFactory;
+        private readonly IKanDoViewModelFactory _viewModelFactory;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator, IRootKanDoViewModelFactory viewModelFactory)
+        public UpdateCurrentViewModelCommand(INavigator navigator, IKanDoViewModelFactory viewModelFactory)
         {
             _navigator = navigator;
             _viewModelFactory = viewModelFactory;
