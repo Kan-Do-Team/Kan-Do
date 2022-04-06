@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\App.xaml
-6-738554142
+7229907947
 
-371710099659
+42-966870648
 222-1909282602
-MainWindow.xaml;Styles\Common.xaml;Views\CardDetailWindow.xaml;Views\HomeView.xaml;Views\KanbanBoardView.xaml;Views\LoginPageView.xaml;
+MainWindow.xaml;Styles\Common.xaml;Views\CardDetailWindow.xaml;Views\HomeView.xaml;Views\KanbanBoardView.xaml;Views\LoginPageView.xaml;Views\RegisterView.xaml;
 
 False
 
