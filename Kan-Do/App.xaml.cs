@@ -68,13 +68,23 @@ namespace Kan_Do.WPF
                 //return () => services.GetRequiredService<KanbanBoardViewModel>();
             });
 
-            services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
+            services.AddSingleton<ViewModelDelegateRenavigator<LoginPageViewModel>>();
+            services.AddSingleton<CreateViewModel<RegisterViewModel>>(services =>
+            {
+                return () => new RegisterViewModel(
+                    services.GetRequiredService<IAuthenticator>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<LoginPageViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<LoginPageViewModel>>());
+        });
 
+            services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
+            services.AddSingleton<ViewModelDelegateRenavigator<RegisterViewModel>>();
             services.AddSingleton<CreateViewModel<LoginPageViewModel>>(services =>
             {
                 return () => new LoginPageViewModel(
                     services.GetRequiredService<IAuthenticator>(),
-                    services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>());
+                    services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<RegisterViewModel>>());
             });
 
             services.AddScoped<INavigator, Navigator>();

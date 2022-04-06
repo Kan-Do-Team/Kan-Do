@@ -70,3 +70,6 @@ C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Platform.dll
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.dll
 C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Views\RegisterView.g.cs
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Views\RegisterView.baml
+C:\Users\Nasir\Documents\GitHub\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\PasswordBoxMVVM.dll
