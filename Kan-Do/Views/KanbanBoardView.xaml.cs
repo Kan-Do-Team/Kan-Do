@@ -46,13 +46,6 @@ namespace Kan_Do.WPF.Views
             KBoardVM.deleteColumn(kcol.ColumnNumber);
         }
 
-        private void NewCard(object sender, RoutedEventArgs e)
-        {
-            KanbanColumn kcol = ((Button)sender).Tag as KanbanColumn;
-            //Sends ColumnID to CardDetailWindow
-            KBoardVM.cardDetails(kcol.ColumnId);
-        }
-
         /*private void OpenCardWindow_Click(object sender, RoutedEventArgs e)
         {
             Kan_Do.KanbanBoard cardWindow = new Kan_Do.KanbanBoard.CardDetailWindow();
@@ -96,6 +89,14 @@ namespace Kan_Do.WPF.Views
 
             //Call the function in the VM, that will edit the index of the column
             KBoardVM.addCard(k1col.ColumnNumber);
+        }
+
+        //Opens new card dialogue window
+        private void NewCard(object sender, RoutedEventArgs e)
+        {
+            KanbanColumn k1col = ((Button)sender).Tag as KanbanColumn;
+            //Sends ColumnID to CardDetailWindow
+            KBoardVM.cardDetails(k1col.ColumnNumber);
         }
     }
 }

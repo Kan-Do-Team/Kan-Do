@@ -105,6 +105,7 @@ namespace Kan_Do.WPF.ViewModels
             }
         }
 
+        //Adds new sample card
         public void addCard(/*String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee, */int columnNumber)
         {
             try
@@ -117,13 +118,24 @@ namespace Kan_Do.WPF.ViewModels
                 string taskDescription = "A shample card";
                 string assignee = "Michael";
                 int columnId = 1;
+
                 ObservableCollection<KanbanCard> columnCardList = boardColumns[columnNumber].column_cards;
-                boardColumns[columnNumber].AddCard(cardName, cardID, dueDate, priority, taskDescription, assignee);
+                boardColumns[columnNumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnNumber });
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Add column function exception:", ex.ToString()); ;
+                System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
             }
+        }
+
+        //Opens new card dialogue box
+        public void cardDetails(int columnnumber)
+        {
+            ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
+            CardDetailWindow view = new CardDetailWindow(columnnumber);
+            view.DataContext = childViewModel;
+            view.ShowDialog();
+            
         }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
@@ -170,16 +182,6 @@ namespace Kan_Do.WPF.ViewModels
 
         }
 
-        public void cardDetails(int columnnumber)
-        {
-            CardDetailWindow view = new CardDetailWindow(columnnumber);
-            view.DataContext = childViewModel;
-
-            //To Do: could use something like this to save details, but not might be necessary depending on contents of card detail window
-            //childViewModel.SaveCardDetails = boardColumns.ColumnId;
-            view.ShowDialog();
-        }
-
         //Check if column would violate board boundaries; if not then shift
         public void shiftColumnLeft(int columnnumber)
         {
@@ -194,8 +196,6 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns.Move(columnnumber, columnnumber - 1);
                 }
 
-
-
                 System.Diagnostics.Debug.WriteLine("Shift column left function success");
             }
 
@@ -208,7 +208,7 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 1;
                     boardColumns[columnnumber - 1].ColumnId = columnnumber;
                 }
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                System.Diagnostics.Debug.WriteLine("Shift colum left function exception:", ex.ToString()); ;
             }
 
         }
@@ -226,8 +226,6 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns.Move(columnnumber, columnnumber + 1);
                 }
 
-
-
                 System.Diagnostics.Debug.WriteLine("Shift column right function success");
             }
 
@@ -240,7 +238,7 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 1;
                     boardColumns[columnnumber + 1].ColumnId = columnnumber + 2;
                 }
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                System.Diagnostics.Debug.WriteLine("Shift column right function exception:", ex.ToString()); ;
             }
 
         }
