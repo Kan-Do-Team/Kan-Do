@@ -13,7 +13,7 @@ namespace Kan_Do.EntityFramework
         public KanDoDbContext CreateDbContext(string[]? args = null)
         {
             var options = new DbContextOptionsBuilder<KanDoDbContext>();
-            options.UseSqlServer("Server=DESKTOP-N\\KANDOSERVER;Database=KanDoDB;Trusted_Connection=True;");
+            options.UseSqlServer("Server=nasirdomain.ddns.net, 1433\\KANDOSERVER; Database=KanDoDB; User Id=sa; Password=CPS8882022; Trusted_Connection=false;");
 
             return new KanDoDbContext(options.Options);
         }

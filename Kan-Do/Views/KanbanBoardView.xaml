@@ -48,7 +48,7 @@
                                     <!--Shift Left Button -->
                                     <Button x:Name="ShiftLeftButton" Tag="{Binding}" Width="25" Height="20" Content="&lt;-" HorizontalAlignment="Right" Click="ShiftColumnLeft"/>
                                     <!--Add Card Button use either NewCard or AddCard-->
-                                    <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="AddCard"/>
+                                    <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
                                     <!--Shift Right Button -->
                                     <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content="-&gt;" HorizontalAlignment="Right" Click="ShiftColumnRight"/>
                                 </StackPanel>
