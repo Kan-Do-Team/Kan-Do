@@ -88,6 +88,7 @@ namespace Kan_Do.WPF.Views
         }
 
 
+
         //Event for the Save button, that will take in all of the UI information and add it to the viewmodel Card object
         /*private void SaveCardData(object sender, RoutedEventArgs e)
         {

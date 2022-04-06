@@ -20,19 +20,9 @@ namespace Kan_Do.WPF.State.Authenticators
         public Account CurrentAccount { get; private set;}
         public bool IsLoggedIn => CurrentAccount != null;
 
-        public async Task<bool> Login(string email, string password)
+        public async Task Login(string email, string password)
         {
-            bool success = true;
-            try
-            {
                 CurrentAccount = await _authenticationService.Login(email, password);
-            }
-            catch (Exception)
-            {
-
-                success = false;
-            }
-            return success;
         }
 
         public void Logout()

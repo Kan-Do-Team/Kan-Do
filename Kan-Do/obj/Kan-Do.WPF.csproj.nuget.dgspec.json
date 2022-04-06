@@ -199,6 +199,10 @@
               "target": "Package",
               "version": "[5.4.1.1, )"
             },
+            "PasswordBoxMVVM": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
             "SimpleModal.WPF": {
               "target": "Package",
               "version": "[1.0.0, )"
