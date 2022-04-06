@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L04XX0zrqDqOivKhpFLnDAjggRamYvCmD0zNc91O/g90C0+6V6xX1zs6+LJ4FGBmTmgCy95RybV5kfmP9YJ19w==",
+  "dgSpecHash": "MGKkQ5dEqKzvoZE7coye7iaqio4yXyzGaug+LdYVnAxs/siG463O2GL6VrnCte95vhnXncmW+GFGaD4R59SuCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
+    "C:\\Users\\Nasir\\.nuget\\packages\\passwordboxmvvm\\1.0.5\\passwordboxmvvm.1.0.5.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\simplemodal.wpf\\1.0.0\\simplemodal.wpf.1.0.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

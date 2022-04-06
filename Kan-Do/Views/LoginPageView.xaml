@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kan_Do.WPF.Views"
-        xmlns:nav="clr-namespace:Kan_Do.WPF.State.Navigators"
-        mc:Ignorable="d"
+        xmlns:nav="clr-namespace:Kan_Do.WPF.State.Navigators" xmlns:components="clr-namespace:PasswordBoxMVVM.Components;assembly=PasswordBoxMVVM"
+             mc:Ignorable="d"
         Height="350" Width="200"
         >
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,23 +28,26 @@
             <Label Content="Email"/>
             <TextBox Margin="0 0 0 10" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Password"/>
-            <PasswordBox x:Name="pbPassword" />
+            <components:BindablePasswordBox Margin="0 0 0 10" Password="{Binding Password}"/>
         </StackPanel>
 
 
         <StackPanel Grid.Row="2">
-            <Button Padding="8" Margin="10 20 10 10" Content="Login" Click="Login_Click" IsDefault="True">
+            <Button Padding="8" Margin="10 20 10 10" Content="Login" Command="{Binding LoginCommand}" IsDefault="True">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </Button.Resources>
             </Button>
-        
-            <Button Margin="10 0 10 20" Content="Already have an account?" Background="Transparent" Foreground="Blue">
+
+            <Button BorderThickness="0" Margin="10 0 10 20" Content="Don't have an account?" Background="Transparent" Foreground="Blue" Command="{Binding ViewRegisterCommand}">
             </Button>
 
-            <TextBlock HorizontalAlignment="Center" DataContext="{Binding ErrorMessageViewModel}" Foreground="Red" Text="{Binding Message}" Visibility="{Binding HasMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <TextBlock HorizontalAlignment="Center" 
+                       DataContext="{Binding ErrorMessageViewModel}" 
+                       Foreground="Red" Text="{Binding Message}" 
+                       Visibility="{Binding HasMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </StackPanel>
 
     </Grid>

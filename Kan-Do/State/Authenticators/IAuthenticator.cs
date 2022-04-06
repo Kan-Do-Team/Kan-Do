@@ -14,7 +14,7 @@ namespace Kan_Do.WPF.State.Authenticators
         bool IsLoggedIn { get; }
 
         Task<RegistrationResult> Register(string firstName, string lastName, string email, string password, string confirmPassword);
-        Task<bool> Login(string email, string password);
+        Task Login(string email, string password);
         void Logout();
     }
 }

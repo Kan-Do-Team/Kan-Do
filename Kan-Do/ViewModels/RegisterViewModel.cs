@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Kan_Do.WPF.Commands;
+using Kan_Do.WPF.State.Authenticators;
+using Kan_Do.WPF.State.Navigators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,10 +87,18 @@ namespace Kan_Do.WPF.ViewModels
         public ICommand ViewLoginCommand { get; }
 
         public MessageViewModel ErrorMessageViewModel { get; }
+        public string ErrorMessage
+        {
+            set => ErrorMessageViewModel.Message = value;
+        }
 
-        public RegisterViewModel()
+        public RegisterViewModel(IAuthenticator autheticator, IRenavigator registerRenavigator, IRenavigator loginRenavigator)
         {
             ErrorMessageViewModel = new MessageViewModel();
+
+
+            RegisterCommand = new RegisterCommand(this, autheticator, registerRenavigator);
+            ViewLoginCommand = new RenavigateCommand(loginRenavigator);
         }
 
     }
