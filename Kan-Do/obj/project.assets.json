@@ -393,6 +393,18 @@
           "lib/net45/System.Windows.Interactivity.dll": {}
         }
       },
+      "PasswordBoxMVVM/1.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/PasswordBoxMVVM.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/PasswordBoxMVVM.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "SimpleModal.WPF/1.0.0": {
         "type": "package",
         "compile": {
@@ -1475,6 +1487,18 @@
         "mvvmlightlibs.nuspec"
       ]
     },
+    "PasswordBoxMVVM/1.0.5": {
+      "sha512": "NeUoGEBKjrYotXuLdSmEsglUhofPNgf6Hd6g7R64R+Iail4+ANzkNRsrcq/euYMlurFkC7MUtUJvesdU20Cycg==",
+      "type": "package",
+      "path": "passwordboxmvvm/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/PasswordBoxMVVM.dll",
+        "passwordboxmvvm.1.0.5.nupkg.sha512",
+        "passwordboxmvvm.nuspec"
+      ]
+    },
     "SimpleModal.WPF/1.0.0": {
       "sha512": "dtTvUl6O2peKZz2oCh5Y6mRjYL+q/Izxm6+z/Nzdpbcgxdo/qTD39stwegu/sY0uBTAYGJEy2P9X8mwpOMM+rw==",
       "type": "package",
@@ -1989,6 +2013,7 @@
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "MvvmLightLibs >= 5.4.1.1",
+      "PasswordBoxMVVM >= 1.0.5",
       "SimpleModal.WPF >= 1.0.0"
     ]
   },
@@ -2049,6 +2074,10 @@
           "MvvmLightLibs": {
             "target": "Package",
             "version": "[5.4.1.1, )"
+          },
+          "PasswordBoxMVVM": {
+            "target": "Package",
+            "version": "[1.0.5, )"
           },
           "SimpleModal.WPF": {
             "target": "Package",

@@ -19,7 +19,11 @@
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodels:LoginPageViewModel}">
-                <views:LoginPageView LoginCommand="{Binding LoginCommand}"/>
+                <views:LoginPageView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:RegisterViewModel}">
+                <views:RegisterView/>
             </DataTemplate>
 
         </ResourceDictionary>
