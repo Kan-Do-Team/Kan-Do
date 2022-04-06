@@ -52,16 +52,40 @@ namespace Kan_Do.WPF
 
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
-            services.AddSingleton<IRootKanDoViewModelFactory, RootKanDoViewModelFactory>();
-            services.AddSingleton<IKanDoViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
-            services.AddSingleton<IKanDoViewModelFactory<KanbanBoardViewModel>, KanbanBoardViewModelFactory>();
+            services.AddSingleton<IKanDoViewModelFactory, KanDoViewModelFactory>();
+            services.AddSingleton<HomeViewModel>();
+            services.AddSingleton<KanbanBoardViewModel>();
+            
 
-            services.AddSingleton<IKanDoViewModelFactory<LoginPageViewModel>>((services) => 
-                new LoginPageViewModelFactory(services.GetRequiredService<IAuthenticator>(),
-                new ViewModelFactoryRenavigator<HomeViewModel>(services.GetRequiredService<INavigator>(),
-                services.GetRequiredService<IKanDoViewModelFactory<HomeViewModel>>())));
+            services.AddSingleton<CreateViewModel<HomeViewModel>>(services =>
+            {
+                return () => new HomeViewModel(services.GetRequiredService<INavigator>());
+            });
 
+            services.AddSingleton<CreateViewModel<KanbanBoardViewModel>>(services =>
+            {
+                return () => new KanbanBoardViewModel();
+                //return () => services.GetRequiredService<KanbanBoardViewModel>();
+            });
 
+            services.AddSingleton<ViewModelDelegateRenavigator<LoginPageViewModel>>();
+            services.AddSingleton<CreateViewModel<RegisterViewModel>>(services =>
+            {
+                return () => new RegisterViewModel(
+                    services.GetRequiredService<IAuthenticator>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<LoginPageViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<LoginPageViewModel>>());
+        });
+
+            services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
+            services.AddSingleton<ViewModelDelegateRenavigator<RegisterViewModel>>();
+            services.AddSingleton<CreateViewModel<LoginPageViewModel>>(services =>
+            {
+                return () => new LoginPageViewModel(
+                    services.GetRequiredService<IAuthenticator>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<RegisterViewModel>>());
+            });
 
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<IAuthenticator, Authenticator>();

@@ -356,6 +356,14 @@
           }
         }
       },
+      "PasswordBoxMVVM/1.0.5": {
+        "runtime": {
+          "lib/netcoreapp3.1/PasswordBoxMVVM.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "SimpleModal.WPF/1.0.0": {
         "runtime": {
           "lib/netcoreapp3.1/ModalControl.dll": {
@@ -785,6 +793,13 @@
       "sha512": "sha512-xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
       "path": "mvvmlightlibs/5.4.1.1",
       "hashPath": "mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    },
+    "PasswordBoxMVVM/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NeUoGEBKjrYotXuLdSmEsglUhofPNgf6Hd6g7R64R+Iail4+ANzkNRsrcq/euYMlurFkC7MUtUJvesdU20Cycg==",
+      "path": "passwordboxmvvm/1.0.5",
+      "hashPath": "passwordboxmvvm.1.0.5.nupkg.sha512"
     },
     "SimpleModal.WPF/1.0.0": {
       "type": "package",
