@@ -34,19 +34,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Michael\\.nuget\\packages\\": {}
+    "C:\\Users\\Intel-TUF\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Intel-TUF\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
       "projectName": "Kan-Do.Domain",
-      "projectPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
-      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Intel-TUF\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "packagesPath": "C:\\Users\\Intel-TUF\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Intel-TUF\\Source\\Repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Intel-TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

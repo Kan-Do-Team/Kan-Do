@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Michael\Source\Repos\pierce-exe\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\
+C:\Users\Intel-TUF\Source\Repos\pierce-exe\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\
 Kan_Do.WPF
 none
 false
-TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\Michael\Source\Repos\pierce-exe\Kan-Do\Kan-Do\App.xaml
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\Intel-TUF\Source\Repos\pierce-exe\Kan-Do\Kan-Do\App.xaml
 7229907947
 
-45615676366
-446-1374504961
+371858834899
+2231070734856
 MainWindow.xaml;Styles\Common.xaml;Views\CardDetailWindow.xaml;Views\HomeView.xaml;Views\KanbanBoardView.xaml;Views\LoginPageView.xaml;Views\RegisterView.xaml;
 
 False

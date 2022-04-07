@@ -110,7 +110,7 @@ namespace Kan_Do.WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kan-Do.WPF;V1.0.0.0;component/views/carddetailwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kan-Do.WPF;component/views/carddetailwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CardDetailWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

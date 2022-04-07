@@ -80,16 +80,6 @@ namespace Kan_Do.WPF.Views
             //Call the function in the VM, that will edit the index of the column
             KBoardVM.shiftColumnRight(k1col.ColumnNumber);
         }
-        
-        //Adds a new sample card
-        private void AddCard(object sender, RoutedEventArgs e)
-        {
-            //Get the index of the element of the list that the Shift button was selected in
-            KanbanColumn k1col = ((Button)sender).Tag as KanbanColumn;
-
-            //Call the function in the VM, that will edit the index of the column
-            KBoardVM.addCard(k1col.ColumnNumber);
-        }
 
         //Opens new card dialogue window
         private void NewCard(object sender, RoutedEventArgs e)

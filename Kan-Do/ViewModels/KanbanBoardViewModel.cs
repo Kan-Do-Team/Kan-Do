@@ -109,37 +109,31 @@ namespace Kan_Do.WPF.ViewModels
             }
         }
 
-        //Adds new sample card
-        public void addCard(/*String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee, */int columnNumber)
+        //Opens new card dialogue box and adds attributes
+        public void cardDetails(int columnnumber)
         {
             try
             {
-                string cardName = "The one and only card";
-                int cardID = 1;
-                DateTime dueDate = DateTime.Today;
-                DateTime dateCreated = DateTime.Today;
-                int priority = 1;
-                string taskDescription = "A shample card";
-                string assignee = "Michael";
-                int columnId = 1;
+                ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
+                CardDetailWindow view = new CardDetailWindow(columnnumber);
+                view.DataContext = childViewModel;
+                view.ShowDialog();
 
-                ObservableCollection<KanbanCard> columnCardList = boardColumns[columnNumber].column_cards;
-                boardColumns[columnNumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnNumber });
+                string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                int cardID = columnCardList.Count();
+                DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                DateTime dateCreated = DateTime.Today;
+                int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                int columnId = columnnumber + 1;
+
+                boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
             }
-        }
-
-        //Opens new card dialogue box
-        public void cardDetails(int columnnumber)
-        {
-            ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
-            CardDetailWindow view = new CardDetailWindow(columnnumber);
-            view.DataContext = childViewModel;
-            view.ShowDialog();
-            
         }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)

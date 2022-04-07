@@ -55,7 +55,7 @@ namespace Kan_Do.WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kan-Do.WPF;V1.0.0.0;component/views/loginpageview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kan-Do.WPF;component/views/loginpageview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LoginPageView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
