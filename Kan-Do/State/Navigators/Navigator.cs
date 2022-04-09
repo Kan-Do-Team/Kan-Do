@@ -27,6 +27,36 @@ namespace Kan_Do.WPF.State.Navigators
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
-    
+
+        private ViewModelBase _currentHomeViewModel;
+        public ViewModelBase CurrentHomeViewModel
+        {
+            get
+            {
+                return _currentHomeViewModel;
+            }
+            set
+            {
+                _currentHomeViewModel = value;
+                OnPropertyChanged(nameof(CurrentHomeViewModel));
+            }
+        }
+
+        private ViewModelBase _currentBoardViewModel;
+        public ViewModelBase CurrentBoardViewModel
+        {
+            get
+            {
+                return _currentBoardViewModel;
+            }
+            set
+            {
+                _currentBoardViewModel = value;
+                OnPropertyChanged(nameof(CurrentBoardViewModel));
+            }
+        }
+
+
+
     }
 }

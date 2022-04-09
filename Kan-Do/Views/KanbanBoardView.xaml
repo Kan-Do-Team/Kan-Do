@@ -13,10 +13,9 @@
             <RowDefinition Height="75"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Line X1="0" Y1="0" X2="800" Y2="0" StrokeThickness="0" />
-        <Line Grid.Row="1" X1="0" Y1="0" X2="0" Y2="585" StrokeThickness="0" />
-        
+
         <!--Grid element for the top panel of the board-->
         <Grid x:Name="ControlsPanel" Grid.Row="0">
             <Grid.RowDefinitions>
@@ -26,7 +25,7 @@
             <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
             <!-- TODO: Route button to the HomePage-->
-            <Button x:Name="HomeButton" Height="40" Width="60" Grid.Row="0" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button x:Name="HomeButton" Height="40" Width="60" Grid.Row="0" Content="Home" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding NavigateToHome}"/>
             <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
         </Grid>
 
@@ -53,7 +52,7 @@
                                     <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content="-&gt;" HorizontalAlignment="Right" Click="ShiftColumnRight"/>
                                 </StackPanel>
                                 <!-- TO DO: The ItemsControl for the CardList will go heree-->
-                                <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" Height="660">
+                                <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" Height="400">
                                     <ItemsControl Name="CardList" Grid.Row="1" ItemsSource="{Binding column_cards}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>

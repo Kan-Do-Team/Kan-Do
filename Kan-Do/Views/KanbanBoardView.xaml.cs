@@ -1,4 +1,5 @@
-﻿using Kan_Do.WPF.ViewModels;
+﻿using Kan_Do.WPF.State.Navigators;
+using Kan_Do.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,12 @@ namespace Kan_Do.WPF.Views
     public partial class KanbanBoardView : UserControl
     {
         public KanbanBoardViewModel KBoardVM;
+        private readonly INavigator _navigator;
         public KanbanBoardView()
         {
             InitializeComponent();
-            KBoardVM = new KanbanBoardViewModel();
-            DataContext = KBoardVM;
+            KBoardVM = new KanbanBoardViewModel(_navigator);
+            //DataContext = KBoardVM;
             ColumnsList.ItemsSource = KBoardVM.boardColumns;
             ColumnsList.DataContext = KBoardVM;
         }

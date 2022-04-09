@@ -55,17 +55,19 @@ namespace Kan_Do.WPF
             services.AddSingleton<IKanDoViewModelFactory, KanDoViewModelFactory>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<KanbanBoardViewModel>();
+
             
 
             services.AddSingleton<CreateViewModel<HomeViewModel>>(services =>
             {
-                return () => new HomeViewModel(services.GetRequiredService<INavigator>());
+                //return () => new HomeViewModel(services.GetRequiredService<INavigator>());
+                return () => services.GetRequiredService<HomeViewModel>();
             });
 
             services.AddSingleton<CreateViewModel<KanbanBoardViewModel>>(services =>
             {
-                return () => new KanbanBoardViewModel();
-                //return () => services.GetRequiredService<KanbanBoardViewModel>();
+               // return () => new KanbanBoardViewModel(services.GetRequiredService<INavigator>());
+                return () => services.GetRequiredService<KanbanBoardViewModel>();
             });
 
             services.AddSingleton<ViewModelDelegateRenavigator<LoginPageViewModel>>();
@@ -78,12 +80,13 @@ namespace Kan_Do.WPF
         });
 
             services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
+            services.AddSingleton<ViewModelDelegateRenavigator<KanbanBoardViewModel>>();
             services.AddSingleton<ViewModelDelegateRenavigator<RegisterViewModel>>();
             services.AddSingleton<CreateViewModel<LoginPageViewModel>>(services =>
             {
                 return () => new LoginPageViewModel(
                     services.GetRequiredService<IAuthenticator>(),
-                    services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<KanbanBoardViewModel>>(),
                     services.GetRequiredService<ViewModelDelegateRenavigator<RegisterViewModel>>());
             });
 
