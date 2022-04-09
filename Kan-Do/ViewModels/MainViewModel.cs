@@ -26,5 +26,10 @@ namespace Kan_Do.WPF.ViewModels
             UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(navigator, _viewModelFactory);
             UpdateCurrentViewModelCommand.Execute(ViewType.Login);
         }
+
+        public void Logout()
+        {
+            Authenticator.Logout();
+        }
     }
 }

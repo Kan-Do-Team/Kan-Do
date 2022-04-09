@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="kando_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
@@ -26,6 +30,10 @@
     <Reference Include="PasswordBoxMVVM">
       <HintPath>..\..\..\..\.nuget\packages\passwordboxmvvm\1.0.5\lib\netcoreapp3.1\PasswordBoxMVVM.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="kando_logo.png" />
   </ItemGroup>
 
 </Project>

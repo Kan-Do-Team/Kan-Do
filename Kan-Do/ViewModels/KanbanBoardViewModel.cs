@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Kan_Do.WPF.Views;
 using Kan_Do.WPF.State.Navigators;
+using System.Windows.Input;
+using Kan_Do.WPF.Commands;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -30,11 +32,11 @@ namespace Kan_Do.WPF.ViewModels
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
 
-        //private readonly INavigator _navigator;
-
+        public ICommand NavigateToHome { get; }
         //Constructor
-        public KanbanBoardViewModel()
+        public KanbanBoardViewModel(INavigator navigator)
         {
+            NavigateToHome = new NavigateToHome(this, navigator);
             boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);

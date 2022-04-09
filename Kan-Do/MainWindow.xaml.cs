@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kan_Do.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace Kan_Do.WPF
             InitializeComponent();
 
             DataContext = dataContext;
+        }
+
+        public void Logout(object sender, EventArgs e)
+        {
+            ((MainViewModel) DataContext).Logout();
         }
     }
 }
