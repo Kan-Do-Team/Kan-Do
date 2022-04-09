@@ -18,5 +18,7 @@ namespace Kan_Do.WPF.State.Navigators
     public interface INavigator
     { 
         ViewModelBase CurrentViewModel { get; set; }
+        ViewModelBase CurrentHomeViewModel { get; set; }
+        ViewModelBase CurrentBoardViewModel { get; set; }
     }
 }

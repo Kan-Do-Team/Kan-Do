@@ -28,7 +28,7 @@ namespace Kan_Do.WPF.Commands
 
         public void Execute(object? parameter)
         {
-            _navigator.CurrentViewModel = new KanbanBoardViewModel();
+            _navigator.CurrentViewModel = _navigator.CurrentBoardViewModel;
         }
     }
 }

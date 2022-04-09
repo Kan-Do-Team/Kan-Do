@@ -3,12 +3,118 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:nav="clr-namespace:Kan_Do.WPF.State.Navigators"
         xmlns:local="clr-namespace:Kan_Do.WPF"
+        xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
         Title="MainWindow" Height="600" Width="800" MaxWidth="1920" MaxHeight="1080"
-        SizeToContent="WidthAndHeight">
+        >
+    <Window.Resources>
+        <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
+    </Window.Resources>
     <Grid>
-        <ContentControl Content="{Binding Navigator.CurrentViewModel}">
-            
-        </ContentControl>
-    </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}"/>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Grid Background="black" Grid.Row=" 1"/>
+            <!-- <Line X1="0" Y1="0" X2="800" Y2="300" StrokeThickness="100" />
+        <Line X1="0" Y1="0" X2="0" Y2="1600" StrokeThickness="100" /> -->
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Button  Padding="10" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="20 5" Command="{Binding UpdateCurrentViewModelCommand}"
+                         CommandParameter="{x:Static nav:ViewType.Home}">My Board
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Padding="12 7" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="45 10" Command="{Binding UpdateCurrentViewModelCommand}"
+                         CommandParameter="{x:Static nav:ViewType.Board}">+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+
+            <Button Grid.Row="2" Margin="30 10" Content="Log Out" Click="Logout" Command="{Binding UpdateCurrentViewModelCommand}"
+                         CommandParameter="{x:Static nav:ViewType.Login}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+        </Grid>
+        
+        
+        <Grid Grid.Column="2">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Image HorizontalAlignment="Center" Height="60" Margin="0,30,0,0" Grid.Row="0"  VerticalAlignment="Top" Width="500" Source="/kando_logo.png"/>
+        </Grid>
+
+            <ContentControl Margin="5" Grid.Row="1" Grid.Column="2" Content="{Binding Navigator.CurrentViewModel}"/>
+
+        </Grid>
 </Window>
