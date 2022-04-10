@@ -18,7 +18,7 @@ namespace Kan_Do.WPF.ViewModels
         {
             NavigateToBoard = new NavigateToBoard(navigator);
             navigator.CurrentHomeViewModel = this;
-            navigator.CurrentBoardViewModel = new KanbanBoardViewModel(navigator);
+            navigator.CurrentBoardViewModel = new KanbanBoardViewModel();
         }
     }
 }
