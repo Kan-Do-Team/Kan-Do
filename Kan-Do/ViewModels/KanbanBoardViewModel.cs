@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Linq;
 using Kan_Do.WPF.Views;
 using Kan_Do.WPF.State.Navigators;
-using System.Windows.Input;
-using Kan_Do.WPF.Commands;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -32,11 +30,11 @@ namespace Kan_Do.WPF.ViewModels
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
 
-        public ICommand NavigateToHome { get; }
+        //private readonly INavigator _navigator;
+
         //Constructor
-        public KanbanBoardViewModel(INavigator navigator)
+        public KanbanBoardViewModel()
         {
-            NavigateToHome = new NavigateToHome(this, navigator);
             boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);
@@ -67,12 +65,12 @@ namespace Kan_Do.WPF.ViewModels
 
         private void FetchCardDetails(object CommandParam)
         {
-            var SelectedCardInfo = new KanbanCard
+            var SelectedCardInfo = new CardDetailWindowViewModel
             {
-                ColumnId = (int)(CommandParam)
+                ColumnID = (int)(CommandParam)
             };
 
-            var CardWindow = new CardDetailWindow(SelectedCardInfo.ColumnId);
+            var CardWindow = new CardDetailWindow(SelectedCardInfo.ColumnID);
             CardWindow.Show();
         }
 
@@ -111,37 +109,31 @@ namespace Kan_Do.WPF.ViewModels
             }
         }
 
-        //Adds new sample card
-        public void addCard(/*String cardName, int cardID, DateTime dueDate, int priority, String taskDescription, String assignee, */int columnNumber)
+        //Opens new card dialogue box and adds attributes
+        public void cardDetails(int columnnumber)
         {
             try
             {
-                string cardName = "The one and only card";
-                int cardID = 1;
-                DateTime dueDate = DateTime.Today;
-                DateTime dateCreated = DateTime.Today;
-                int priority = 1;
-                string taskDescription = "A shample card";
-                string assignee = "Michael";
-                int columnId = 1;
+                ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
+                CardDetailWindow view = new CardDetailWindow(columnnumber);
+                view.DataContext = childViewModel;
+                view.ShowDialog();
 
-                ObservableCollection<KanbanCard> columnCardList = boardColumns[columnNumber].column_cards;
-                boardColumns[columnNumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnNumber });
+                string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                int cardID = columnCardList.Count();
+                DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                DateTime dateCreated = DateTime.Today;
+                int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                int columnId = columnnumber + 1;
+
+                boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
             }
-        }
-
-        //Opens new card dialogue box
-        public void cardDetails(int columnnumber)
-        {
-            ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
-            CardDetailWindow view = new CardDetailWindow(columnnumber);
-            view.DataContext = childViewModel;
-            view.ShowDialog();
-            
         }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
@@ -150,7 +142,7 @@ namespace Kan_Do.WPF.ViewModels
             try
             {
                 //First check to see if we are deleting the last element
-                if (columnnumber == boardColumns.Count)
+                if (columnnumber == boardColumns.Count-1)
                 {
                     //Simply delete the last items of the collection, no adjustment to the columnNumber needed 
                     //Remove the element at the specified columnnumber (index)
@@ -170,7 +162,7 @@ namespace Kan_Do.WPF.ViewModels
                     int col = columnnumber;
                     for (int i = 0; i < list.Count; i++)
                     {
-                        if (col < list.Count)
+                        if (col < boardColumns.Count)
                         {
                             list[i].ColumnNumber = col;
                             boardColumns.RemoveAt(col);

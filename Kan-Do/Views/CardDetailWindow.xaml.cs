@@ -36,14 +36,18 @@ namespace Kan_Do.WPF.Views
         private void initView(int columnId)
         {
             KCardVM = new CardDetailWindowViewModel() { ColumnID = columnId };
-            this.DataContext = KCardVM;
+            //this.DataContext = KCardVM;
+            this.textCardTitle.Text = KCardVM.cardName;
+            this.DescriptionTxtBox.Text = KCardVM.taskDescription;
+
             PriorityComboBx_Loaded();
             SetCreatedDate();
-            Messenger.Default.Register<KanbanCard>(this, (Action) => RecieveInputMessage(Action));
+
+            Messenger.Default.Register<CardDetailWindowViewModel>(this, (Action) => RecieveInputMessage(Action));
         }
 
         //Once the Card object has been received by the parent, then it will close this view
-        private void RecieveInputMessage(KanbanCard cardDetails)
+        private void RecieveInputMessage(CardDetailWindowViewModel KCardVM)
         {
             /*
             //this.DataContext = cardDetails;
@@ -55,10 +59,9 @@ namespace Kan_Do.WPF.Views
             KCardVM.KCard.DueDate = cardDetails.DueDate;
             KCardVM.KCard.Priority = cardDetails.Priority;
             KCardVM.KCard.TaskDescription = cardDetails.TaskDescription;
-
             KCardVM.SaveCardDetails(KCardVM.KCard.CardName, KCardVM.KCard.CardID, KCardVM.KCard.DueDate, KCardVM.KCard.Priority, KCardVM.KCard.TaskDescription, KCardVM.KCard.Assignee, KCardVM.KCard.CardID);
             */
-            
+
             this.Close();
         }
 
@@ -84,6 +87,8 @@ namespace Kan_Do.WPF.Views
             DateTime thisDay = DateTime.Today;
             DateCreatedTxtBx.Text = thisDay.ToString("D");
             KCardVM.KCard.DateCreated = thisDay;
+            //KCardVM.KCard.CardName = String.Empty;
+            //KCardVM.KCard.TaskDescription = String.Empty;
             //KCardVM.KCard.DueDate = thisDay;
         }
 

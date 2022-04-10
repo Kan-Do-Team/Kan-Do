@@ -7,13 +7,13 @@
         xmlns:local="clr-namespace:Kan_Do.WPF"
         xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
         Title="MainWindow" Height="600" Width="800" MaxWidth="1920" MaxHeight="1080"
-        >
+        SizeToContent="Width">
     <Window.Resources>
         <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" MaxWidth="160"/>
             <ColumnDefinition Width="2"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
@@ -53,7 +53,7 @@
             </Grid.Style>
             <Grid Background="black" Grid.Row=" 1"/>
             <!-- <Line X1="0" Y1="0" X2="800" Y2="300" StrokeThickness="100" />
-        <Line X1="0" Y1="0" X2="0" Y2="1600" StrokeThickness="100" /> -->
+            <Line X1="0" Y1="0" X2="0" Y2="1600" StrokeThickness="100" /> -->
         </Grid>
 
         <Grid Grid.Row="1">
@@ -114,7 +114,10 @@
             <Image HorizontalAlignment="Center" Height="60" Margin="0,30,0,0" Grid.Row="0"  VerticalAlignment="Top" Width="500" Source="/kando_logo.png"/>
         </Grid>
 
-            <ContentControl Margin="5" Grid.Row="1" Grid.Column="2" Content="{Binding Navigator.CurrentViewModel}"/>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Row="1" Grid.Column="2">
+            <ContentControl Margin="5" Content="{Binding Navigator.CurrentViewModel}"/>
+        </ScrollViewer>
 
         </Grid>
 </Window>
