@@ -4,6 +4,7 @@ using Kan_Do.WPF.State.Navigators;
 using Kan_Do.WPF.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,12 @@ namespace Kan_Do.WPF.ViewModels
         public INavigator Navigator { get; set; }
         public IAuthenticator Authenticator { get; }
         public ICommand UpdateCurrentViewModelCommand { get; }
+        public ObservableCollection<KanbanBoardViewModel> boardList { get; set; }
+        public KanbanBoardViewModel board { get; set; }
         public MainViewModel(INavigator navigator, IKanDoViewModelFactory viewModelFactory, IAuthenticator authenticator)
         {
+            boardList = new ObservableCollection<KanbanBoardViewModel>();
+
             Navigator = navigator;
             _viewModelFactory = viewModelFactory;
             Authenticator = authenticator;
@@ -30,6 +35,11 @@ namespace Kan_Do.WPF.ViewModels
         public void Logout()
         {
             Authenticator.Logout();
+        }
+
+        public void AddBoard(KanbanBoardViewModel kanbanBoardViewModel)
+        {
+            boardList.Add(kanbanBoardViewModel);
         }
     }
 }

@@ -86,7 +86,7 @@ namespace Kan_Do.WPF
             {
                 return () => new LoginPageViewModel(
                     services.GetRequiredService<IAuthenticator>(),
-                    services.GetRequiredService<ViewModelDelegateRenavigator<KanbanBoardViewModel>>(),
+                    services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>(),
                     services.GetRequiredService<ViewModelDelegateRenavigator<RegisterViewModel>>());
             });
 
