@@ -23,18 +23,30 @@ namespace Kan_Do.WPF.ViewModels
         //public KanbanBoardModel KBoardModel;
 
         //List of the KanbanColumn class
-        public ObservableCollection<KanbanColumn> boardColumns;
+        public ObservableCollection<KanbanColumn> boardColumns { get; set; }
 
         public GalaSoft.MvvmLight.Command.RelayCommand<object> ProcessCardDetails { get; set; }
 
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
-
-        //private readonly INavigator _navigator;
+        private string boardName;
+        public string BoardName
+        {
+            get
+            {
+                return boardName;
+            }
+            set 
+            {
+                boardName = value;
+                OnPropertyChanged(nameof(BoardName));
+            } 
+        }
 
         //Constructor
         public KanbanBoardViewModel()
         {
+            
             boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);
@@ -43,7 +55,9 @@ namespace Kan_Do.WPF.ViewModels
             //Initialize child view model
             childViewModel = new CardDetailWindowViewModel();
             //_navigator = navigator;
+            BoardName = "Board Title";
         }
+
 
         //Function that fills the initial column values in the UI 
         //Default will be To Do, Doing and Done

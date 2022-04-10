@@ -25,16 +25,17 @@ namespace Kan_Do.WPF.Views
         public KanbanBoardView()
         {
             InitializeComponent();
-            KBoardVM = new KanbanBoardViewModel();
-            DataContext = KBoardVM;
-            ColumnsList.ItemsSource = KBoardVM.boardColumns;
-            ColumnsList.DataContext = KBoardVM;
+            //KBoardVM = ((KanbanBoardViewModel)(this.));
+            //KanbanBoardViewM
+            //DataContext = KBoardVM;
+            //ColumnsList.ItemsSource = KBoardVM.boardColumns;
+            //ColumnsList.DataContext = KBoardVM;
         }
 
         private void AddColumn(object sender, RoutedEventArgs e)
         {
             //Call the function in the ViewModel that adds a column
-            KBoardVM.addColumn();
+            ((KanbanBoardViewModel)this.DataContext).addColumn();
         }
 
         private void DeleteColumn(object sender, RoutedEventArgs e)
@@ -43,7 +44,7 @@ namespace Kan_Do.WPF.Views
             KanbanColumn kcol = ((Button)sender).Tag as KanbanColumn;
 
             //Call the function in the VM, that will remove the element at the index 
-            KBoardVM.deleteColumn(kcol.ColumnNumber);
+            ((KanbanBoardViewModel)this.DataContext).deleteColumn(kcol.ColumnNumber);
         }
 
         /*private void OpenCardWindow_Click(object sender, RoutedEventArgs e)
@@ -69,7 +70,7 @@ namespace Kan_Do.WPF.Views
             KanbanColumn k1col = ((Button)sender).Tag as KanbanColumn;
 
             //Call the function in the VM, that will edit the index of the column
-            KBoardVM.shiftColumnLeft(k1col.ColumnNumber);
+            ((KanbanBoardViewModel)this.DataContext).shiftColumnLeft(k1col.ColumnNumber);
         }
 
         private void ShiftColumnRight(object sender, RoutedEventArgs e)
@@ -78,7 +79,7 @@ namespace Kan_Do.WPF.Views
             KanbanColumn k1col = ((Button)sender).Tag as KanbanColumn;
 
             //Call the function in the VM, that will edit the index of the column
-            KBoardVM.shiftColumnRight(k1col.ColumnNumber);
+            ((KanbanBoardViewModel)this.DataContext).shiftColumnRight(k1col.ColumnNumber);
         }
 
         //Opens new card dialogue window
@@ -86,7 +87,7 @@ namespace Kan_Do.WPF.Views
         {
             KanbanColumn k1col = ((Button)sender).Tag as KanbanColumn;
             //Sends ColumnID to CardDetailWindow
-            KBoardVM.cardDetails(k1col.ColumnNumber);
+            ((KanbanBoardViewModel)this.DataContext).cardDetails(k1col.ColumnNumber);
         }
     }
 }

@@ -26,7 +26,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Label x:Name="BoardTitle" Height="auto" Width="auto" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="26" FontWeight="ExtraBold"></Label>
+            <TextBox x:Name="BoardTitle" Height="auto" Width="auto" Text="{Binding BoardName}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="26" MaxLength="21"></TextBox>
             <!-- TODO: Route button to the HomePage-->
             <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
         </Grid>
@@ -34,7 +34,7 @@
         <!--Grid for the Columns-->
         <Grid Grid.Row="1" HorizontalAlignment="Left">
             <StackPanel Orientation="Vertical">
-                <ItemsControl Name="ColumnsList">
+                <ItemsControl DataContext="{Binding}" ItemsSource="{Binding boardColumns}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border MaxWidth="270" Background="#E9EDEE" BorderBrush="#E9EDEE" BorderThickness="1" CornerRadius="10" Margin="20 10">
@@ -56,7 +56,7 @@
                                                 </Button.Resources>
                                             </Button>
                                             <!--Add Card Button use either NewCard or AddCard-->
-                                            <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
+                                            <Button x:Name="AddCard" Content="+Card" Height="20" Width="50" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
                                             <!--Shift Right Button -->
                                             <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content=">" HorizontalAlignment="Right" Click="ShiftColumnRight">
                                                 <Button.Resources>
