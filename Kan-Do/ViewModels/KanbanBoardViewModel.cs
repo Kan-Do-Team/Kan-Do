@@ -116,7 +116,7 @@ namespace Kan_Do.WPF.ViewModels
             {
                 ObservableCollection<KanbanCard> columnCardList = boardColumns[columnnumber].column_cards;
                 CardDetailWindow view = new CardDetailWindow(columnnumber);
-                view.DataContext = childViewModel;
+                //view.DataContext = childViewModel;
                 view.ShowDialog();
 
                 string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
