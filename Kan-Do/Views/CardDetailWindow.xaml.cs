@@ -36,7 +36,7 @@ namespace Kan_Do.WPF.Views
         private void initView(int columnId)
         {
             KCardVM = new CardDetailWindowViewModel() { ColumnID = columnId };
-            //this.DataContext = KCardVM;
+            this.DataContext = KCardVM;
             this.textCardTitle.Text = KCardVM.cardName;
             this.DescriptionTxtBox.Text = KCardVM.taskDescription;
 

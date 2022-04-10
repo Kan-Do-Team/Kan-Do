@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Kan_Do.WPF"
         xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
         Title="MainWindow" Height="600" Width="800" MaxWidth="1920" MaxHeight="1080"
-        SizeToContent="Width">
+        SizeToContent="WidthAndHeight">
     <Window.Resources>
         <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
     </Window.Resources>
@@ -24,7 +24,19 @@
         </Grid.RowDefinitions>
 
         <Grid>
-            <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <Label Content="Hello"  FontSize="19" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}" Typography.Capitals="AllSmallCaps"
+                               FontSize="23" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Grid Grid.Row="1" Background="Black"/>
+            </Grid>
+            
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Style.Triggers>

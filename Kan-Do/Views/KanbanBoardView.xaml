@@ -26,7 +26,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Label x:Name="BoardTitle" Height="40" Width="120" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+            <Label x:Name="BoardTitle" Height="auto" Width="auto" Content="BoardTitle" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="26" FontWeight="ExtraBold"></Label>
             <!-- TODO: Route button to the HomePage-->
             <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
         </Grid>
@@ -48,11 +48,23 @@
                                         <StackPanel Grid.Row="0" Height="50" Orientation="Horizontal">
                                             <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
                                             <!--Shift Left Button -->
-                                            <Button x:Name="ShiftLeftButton" Tag="{Binding}" Width="25" Height="20" Content="&lt;-" HorizontalAlignment="Right" Click="ShiftColumnLeft"/>
+                                            <Button x:Name="ShiftLeftButton" Tag="{Binding}" Width="25" Height="20" Content="&lt;" HorizontalAlignment="Right" Click="ShiftColumnLeft">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="7 0 0 7"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
                                             <!--Add Card Button use either NewCard or AddCard-->
                                             <Button x:Name="AddCard" Content="+Card" Height="20" Width="40" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
                                             <!--Shift Right Button -->
-                                            <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content="-&gt;" HorizontalAlignment="Right" Click="ShiftColumnRight"/>
+                                            <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content=">" HorizontalAlignment="Right" Click="ShiftColumnRight">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="0 7 7 0"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
                                             <Button x:Name="RemoveColumnButton" Tag="{Binding}" Margin="20 0 0 0" Height="20" Width="50" Content="Remove" HorizontalAlignment="Right" Click="DeleteColumn"/>
                                         </StackPanel>
                                     </Border>
