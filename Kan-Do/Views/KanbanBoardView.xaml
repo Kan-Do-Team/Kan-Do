@@ -6,11 +6,13 @@
       xmlns:local="clr-namespace:Kan_Do.WPF.Views" 
       xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800">
+      d:DesignHeight="450" d:DesignWidth="600">
     <UserControl.Resources>
         <converters:PriorityToColourConverter x:Key="PriorityToColourConverter" />
+        <converters:PriorityToStringConverter x:Key="PriorityToStringConverter" />
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid VerticalAlignment="Stretch">
         <!--Row definitions for the entire view-->
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -22,74 +24,155 @@
         <!--Grid element for the top panel of the board-->
         <Grid x:Name="ControlsPanel" Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Button x:Name="SaveBtn" Height="40" Width="60" Grid.Row="0" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <TextBox x:Name="BoardTitle" Height="auto" Width="auto" Text="{Binding BoardName}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="26" MaxLength="21"></TextBox>
-            <!-- TODO: Route button to the HomePage-->
-            <Button x:Name="AddColumnButton" Grid.Row="1" Height="30" Width="40" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddColumn"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="BoardTitle" Margin="45 0 0 0"  Height="auto" Width="auto" 
+                     Text="{Binding BoardName}" HorizontalAlignment="Left" 
+                     VerticalAlignment="Top" FontSize="50" MaxLength="21"
+                     BorderThickness="0" FontFamily="Lato" FontWeight="Bold"></TextBox>
+                <Button x:Name="SaveBtn" Style="{DynamicResource HomeButtons}" Height="40" Grid.Row="0" Grid.Column="1"  
+                        Content="SAVE" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                        Padding="20 10" FontFamily="Lato" FontWeight="Bold" Foreground="White"
+                        Background="#C4C4C4" BorderThickness="0" Margin="20 0 0 0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.8" ShadowDepth="2" Opacity="0.2"/>
+                    </Button.BitmapEffect>
+                </Button>
+                <Button x:Name="AddColumnButton" Style="{DynamicResource HomeButtons}" Grid.Column="1" Height="40" Content="NEW COLUMN" 
+                        HorizontalAlignment="Right" VerticalAlignment="Center" Click="AddColumn"
+                        Padding="20 10" FontFamily="Lato" FontWeight="Bold" Foreground="white"
+                        Background="#1A9988" BorderThickness="0"  Margin="20 0 0 0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.8" ShadowDepth="2" Opacity="0.2"/>
+                    </Button.BitmapEffect>
+                </Button>
+            </StackPanel>
+
+            
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                
+            </StackPanel>
         </Grid>
 
         <!--Grid for the Columns-->
-        <Grid Grid.Row="1" HorizontalAlignment="Left">
-            <StackPanel Orientation="Vertical">
+        <Grid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Margin="20 0 0 35" VerticalAlignment="Stretch">
                 <ItemsControl DataContext="{Binding}" ItemsSource="{Binding boardColumns}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border MaxWidth="270" Background="#E9EDEE" BorderBrush="#E9EDEE" BorderThickness="1" CornerRadius="10" Margin="20 10">
+                            <Border MaxWidth="285" Background="#F2F4F6" BorderBrush="#F2F4F6" BorderThickness="1" CornerRadius="20" Padding="0 0 0 15" Margin="15 15 15 0">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition MaxHeight="50"/>
-                                        <RowDefinition/>
+                                        <RowDefinition MaxHeight="70"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <!--Stackpanel will have the column name, the column options button "..." and the card options button []-->
-                                    <Border Background="#C4C4C4" BorderBrush="#E9EDEE" BorderThickness="0" CornerRadius="10 10 0 0" Padding="5">
+                                    <Border Background="#F2F4F6" BorderBrush="#F2F4F6" BorderThickness="0" CornerRadius="20 20 0 0" Padding="5">
                                         <StackPanel Grid.Row="0" Height="50" Orientation="Horizontal">
-                                            <TextBox x:Name="ColumnName" Height="20" Width="70" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="5"></TextBox>
+                                            <TextBox x:Name="ColumnName" Height="20" Width="100" VerticalAlignment="Top" Text="{Binding ColumnName}" Margin="15"
+                                                     Background="#F2F4F6" BorderThickness="0" FontFamily="Lato" CharacterCasing="Upper" FontSize="12"></TextBox>
                                             <!--Shift Left Button -->
-                                            <Button x:Name="ShiftLeftButton" Tag="{Binding}" Width="25" Height="20" Content="&lt;" HorizontalAlignment="Right" Click="ShiftColumnLeft">
+                                            <Button x:Name="ShiftLeftButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Width="28" Height="26" Content="&lt;" HorizontalAlignment="Right" Click="ShiftColumnLeft"
+                                                    Padding="0 -2 0 0" FontSize="21" FontWeight="SemiBold" FontFamily="Lato" Margin="0"
+                                                    Foreground="White" Background="#C4C4C4" BorderThickness="0" ToolTip="Shift Column Left">
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
-                                                        <Setter Property="CornerRadius" Value="7 0 0 7"/>
+                                                        <Setter Property="CornerRadius" Value="15 0 0 15"/>
                                                     </Style>
                                                 </Button.Resources>
                                             </Button>
                                             <!--Add Card Button use either NewCard or AddCard-->
-                                            <Button x:Name="AddCard" Content="+Card" Height="20" Width="50" HorizontalAlignment="Center" Tag="{Binding}" Click="NewCard"/>
+                                            
                                             <!--Shift Right Button -->
-                                            <Button x:Name="ShiftRightButton" Tag="{Binding}" Width="25" Height="20" Content=">" HorizontalAlignment="Right" Click="ShiftColumnRight">
+                                            <Button x:Name="ShiftRightButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Width="28" Height="26" Content=">" HorizontalAlignment="Right" Click="ShiftColumnRight"
+                                                    Padding="0 -2 0 0" FontSize="21" FontWeight="SemiBold" FontFamily="Lato" Margin="0 0 10 0"
+                                                    Foreground="White" Background="#C4C4C4" BorderThickness="1 0 0 0" BorderBrush="white" ToolTip="Shift Column Right">
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
-                                                        <Setter Property="CornerRadius" Value="0 7 7 0"/>
+                                                        <Setter Property="CornerRadius" Value="0 15 15 0"/>
                                                     </Style>
                                                 </Button.Resources>
                                             </Button>
-                                            <Button x:Name="RemoveColumnButton" Tag="{Binding}" Margin="20 0 0 0" Height="20" Width="50" Content="Remove" HorizontalAlignment="Right" Click="DeleteColumn"/>
+
+                                            <Button x:Name="AddCard" Style="{DynamicResource HomeButtons}" Content="+" Height="26" Width="25" Margin="0 0 10 0" HorizontalAlignment="Center" Padding="0 -4 0 0"
+                                                    ToolTip="Add a New Card" Tag="{Binding}" Click="NewCard" FontWeight="Bold" FontSize="21"
+                                                    Background="#C4C4C4" Foreground="white" BorderThickness="0">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="20"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
+                                            <Button x:Name="RemoveColumnButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Margin="0 0 20 0" Padding="0 -4 0 0" Width="25" Height="26"  FontSize="19"
+                                                    Content="x" HorizontalAlignment="Right" Click="DeleteColumn" BorderThickness="0" Background="#C4C4C4" FontWeight="SemiBold"
+                                                    Foreground="white" ToolTip="Delete Column">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="20"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
                                     <!-- TO DO: The ItemsControl for the CardList will go heree-->
-                                    <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" MinHeight="400">
+                                    <StackPanel x:Name="CardListPanel" Grid.Row="1" HorizontalAlignment="Left" MinHeight="600" VerticalAlignment="Bottom">
                                         <ItemsControl Name="CardList" Grid.Row="1" ItemsSource="{Binding column_cards}">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <StackPanel x:Name="CardInfo" Orientation="Vertical">
-                                                        <Border Background="White" BorderBrush="{Binding Priority, Converter={StaticResource PriorityToColourConverter}}" BorderThickness="1.5" CornerRadius="20" Margin="20 5 20 10">
-                                                            <Grid Margin="10">
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="60"/>
-                                                                    <ColumnDefinition Width="130"/>
-                                                                </Grid.ColumnDefinitions>
+                                                    <StackPanel x:Name="CardInfo" Orientation="Vertical" >
+                                                        <StackPanel.BitmapEffect>
+                                                            <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.8" ShadowDepth="2" Opacity="0.2"/>
+                                                        </StackPanel.BitmapEffect>
+                                                        <Border Background="White" CornerRadius="20" Margin="20 5 20 10">
+                                                            <Grid MinWidth="240" >
 
                                                                 <Grid.RowDefinitions>
                                                                     <RowDefinition Height="Auto"/>
-                                                                    <RowDefinition Height="Auto"/>
-                                                                    <RowDefinition Height="Auto"/>
-                                                                    <RowDefinition Height="Auto"/>
-                                                                    <RowDefinition Height="Auto"/>
                                                                 </Grid.RowDefinitions>
-                                                                
-                                                                <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="0">Name:</TextBlock>
+
+                                                                <StackPanel Margin="18">
+                                                                    <Border  BorderThickness="0" CornerRadius="12" HorizontalAlignment="Left" 
+                                                                             Background="{Binding Priority, Converter={StaticResource PriorityToColourConverter}}"
+                                                                             Padding="6 1 6 1"  Margin="0 0 0 5">
+                                                                        <Label 
+                                                                           x:Name="CardPriority" FontFamily="Lato" Content="{Binding Priority, Converter={StaticResource PriorityToStringConverter}}" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"
+                                                                            FontSize="10"></Label>
+                                                                    </Border>
+
+                                                                    
+
+                                                                    <TextBlock TextWrapping="Wrap" x:Name="CardName" Text="{Binding CardName}"
+                                                                               FontFamily="Lato" FontWeight="Bold" FontSize="18"
+                                                                               Margin="0 5 0 0" Visibility="{Binding CardName, Converter={StaticResource StringToVisibilityConverter}}"></TextBlock>
+                                                                    <TextBlock TextWrapping="Wrap" x:Name="CardDueDate" Text="{Binding DueDate, StringFormat=MMMM d yyyy}" 
+                                                                               FontFamily="Lato" FontSize="12" Foreground="#686A6A"
+                                                                               Margin="0 5 0 0" FontWeight="SemiBold"></TextBlock>
+                                                                    <TextBlock TextWrapping="Wrap" x:Name="CardAssignee" Text="{Binding Assignee}"
+                                                                               FontFamily="Lato"  FontSize="12" Foreground="#686A6A"
+                                                                               Margin="0 5 0 0" Visibility="{Binding Assignee, Converter={StaticResource StringToVisibilityConverter}}"></TextBlock>
+                                                                    <TextBlock TextWrapping="Wrap" x:Name="CardDesc" Text="{Binding TaskDescription}"
+                                                                               FontFamily="Lato" FontSize="12" Foreground="#686A6A"
+                                                                               Margin="0 5 0 0" Visibility="{Binding TaskDescription, Converter={StaticResource StringToVisibilityConverter}}"></TextBlock>
+                                                                    
+                                                                </StackPanel>
+
+                                                                <!--<TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="0">Name:</TextBlock>
                                                                 <TextBlock TextWrapping="Wrap" x:Name="CardName" Grid.Row="0" Grid.Column="1" Text="{Binding CardName}"></TextBlock>
 
                                                                 <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0">Due Date:</TextBlock>
@@ -99,7 +182,7 @@
                                                                 <TextBlock TextWrapping="Wrap" x:Name="CardPriority" Grid.Row="2" Grid.Column="1" Text="{Binding Priority}"></TextBlock>
 
                                                                 <TextBlock TextWrapping="Wrap" Grid.Row="3" Grid.Column="0">Assignee:</TextBlock>
-                                                                <TextBlock TextWrapping="Wrap" x:Name="CardAssignee" Grid.Row="3" Grid.Column="1" Text="{Binding Assignee}"></TextBlock>
+                                                                <TextBlock TextWrapping="Wrap" x:Name="CardAssignee" Grid.Row="3" Grid.Column="1" Text="{Binding Assignee}"></TextBlock>-->
 
                                                                 <Label x:Name="TestEventReturn" Height="5" Grid.Row="4" Grid.Column="0"/>
                                                                 <!--<Button Grid.ColumnSpan="2"  Grid.RowSpan="5" Background="Transparent" BorderBrush="Transparent"/>-->

@@ -22,3 +22,15 @@ C:\Users\Intel-TUF\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0
 C:\Users\Intel-TUF\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\refint\Kan-Do.Domain.dll
 C:\Users\Intel-TUF\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.pdb
 C:\Users\Intel-TUF\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\ref\Kan-Do.Domain.dll
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.deps.json
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.dll
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.pdb
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.csproj.AssemblyReference.cache
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.AssemblyInfoInputs.cache
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.AssemblyInfo.cs
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.csproj.CoreCompileInputs.cache
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.dll
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\refint\Kan-Do.Domain.dll
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.pdb
+C:\Users\seren\source\repos\pierce-exe\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\ref\Kan-Do.Domain.dll

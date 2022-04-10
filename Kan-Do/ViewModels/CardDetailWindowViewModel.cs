@@ -20,6 +20,7 @@ namespace Kan_Do.WPF.ViewModels
         public CardDetailWindowViewModel()
         {
             KCard = new KanbanCard();
+            KCard.DueDate = DateTime.Now;
             ReturnCardDetails = new GalaSoft.MvvmLight.Command.RelayCommand(ProcessCardDetails);
             Messenger.Default.Register<CardDetailWindowViewModel>(this, (action) => RecieveCardInfo(action));
         }

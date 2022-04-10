@@ -15,13 +15,13 @@ namespace Kan_Do.WPF.Converters
             switch (value)
             {
                 case 0:
-                    return "White";
+                    return "#C4C4C4";
                     break;
                 case 1:
                     return "#1A9988";
                     break;
                 case 2:
-                    return "#686A6A";
+                    return "#C4C4C4";
                     break;
                 case 3:
                     return "#EB5600";
@@ -30,7 +30,7 @@ namespace Kan_Do.WPF.Converters
                     break;
             
             }
-            return "White";
+            return "#C4C4C4";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

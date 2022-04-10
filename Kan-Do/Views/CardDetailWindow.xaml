@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kan_Do.WPF.Views"
         xmlns:VM="clr-namespace:Kan_Do.WPF.ViewModels"
         mc:Ignorable="d"
-        Title="CardDetailWindow" Height="400" Width="700">
+        Title="New Card" Height="400" Width="700">
     <Grid>
         <TextBox x:Name="textCardTitle" Text="{Binding cardName, UpdateSourceTrigger=LostFocus}" HorizontalAlignment="Left" Margin="205,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447" Height="61" FontSize="20" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Margin="205,85,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>

@@ -63,9 +63,9 @@ namespace Kan_Do.WPF.ViewModels
         //Default will be To Do, Doing and Done
         private void FillInitialColumns()
         {
-            boardColumns.Add(new KanbanColumn { ColumnName = "To Do", ColumnNumber = 0, ColumnId = 1 });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Doing", ColumnNumber = 1, ColumnId = 2 });
-            boardColumns.Add(new KanbanColumn { ColumnName = "Done", ColumnNumber = 2, ColumnId = 3 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "TO DO", ColumnNumber = 0, ColumnId = 1 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "DOING", ColumnNumber = 1, ColumnId = 2 });
+            boardColumns.Add(new KanbanColumn { ColumnName = "DONE", ColumnNumber = 2, ColumnId = 3 });
             mcolId = 3;
         }
 
@@ -114,7 +114,7 @@ namespace Kan_Do.WPF.ViewModels
                 //Count returns the number of elements, and since the columnNumber starts at 0, count will be the next col's position
 
                 //Add a new column element to the list 
-                boardColumns.Add(new KanbanColumn { ColumnName = "Column Name", ColumnNumber = colNum, ColumnId = mcolId });
+                boardColumns.Add(new KanbanColumn { ColumnName = "NEW COLUMN", ColumnNumber = colNum, ColumnId = mcolId });
                 System.Diagnostics.Debug.WriteLine("Add column function success");
             }
             catch (Exception ex)
