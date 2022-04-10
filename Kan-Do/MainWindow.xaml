@@ -7,14 +7,14 @@
         xmlns:local="clr-namespace:Kan_Do.WPF"
         xmlns:vm="clr-namespace:Kan_Do.WPF.ViewModels"
         xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
-        Title="MainWindow" Height="auto" Width="auto" MaxWidth="1920" MaxHeight="1080"
+        Title="KAN-DO" Height="auto" Width="1200" MaxWidth="1920" MaxHeight="1080"
 >
     <Window.Resources>
         <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" MaxWidth="160">
+            <ColumnDefinition Width="auto" MaxWidth="180">
                 <ColumnDefinition.Style>
                     <Style TargetType="{x:Type ColumnDefinition}">
                         <Setter Property="Width" Value="Auto" />
@@ -27,7 +27,7 @@
                 </ColumnDefinition.Style>
             </ColumnDefinition>
             <ColumnDefinition Width="0"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -35,32 +35,29 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
+        <Rectangle Grid.Column="0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#E9EDEE"/>
+                <!-- <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#E9EDEE" Offset="0" />
+                    <GradientStop Color="E9EDEE" Offset="1" />
+                </LinearGradientBrush> -->
+            </Rectangle.Fill>
+        </Rectangle>
+
         <Grid>
             <Grid>
-                <StackPanel>
-                    <Label Content="Hello" FontSize="19" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0 15 0 0"/>
-                    <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}" Typography.Capitals="AllSmallCaps"
-                               FontSize="23" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+                <StackPanel Margin="15, 60, 5, 10" Width="200">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Hey," FontSize="14" FontFamily="Lato" Foreground="#686A6A" Margin="0" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}" Typography.Capitals="AllSmallCaps"
+                               FontSize="14" FontFamily="Lato" Foreground="#686A6A" Margin="0 5 0 0" FontWeight="Bold"/>
+                    </StackPanel>
+                    <Label Content="Basic Plan" FontSize="14" FontFamily="Lato" Foreground="#686A6A" FontWeight="Light" Margin="0 -7 0 0" />
                 </StackPanel>
-            </Grid>
-            
-            <Grid.Style>
-                <Style TargetType="Grid">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
-                            <Setter Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Grid.Style>
-        </Grid>
 
-        <Grid Grid.Column="1" Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="100*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+            </Grid>
+
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Style.Triggers>
@@ -70,50 +67,74 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <Grid Background="black" Grid.Row=" 1"/>
-            <!-- <Line X1="0" Y1="0" X2="800" Y2="300" StrokeThickness="100" />
-            <Line X1="0" Y1="0" X2="0" Y2="1600" StrokeThickness="100" /> -->
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="75"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical">
-                <Button  Padding="12 7" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="10 10" Click="AddBoard">Add Board
+                <Button  Style="{DynamicResource HomeButtons}" Padding="16 9" Grid.Column="0" Grid.Row="1" Width="140" 
+                         HorizontalAlignment="Left" VerticalAlignment="top" Margin="20 0 15 0" 
+                         Background="#F3F7F8" Foreground="#686A6A" FontFamily="Lato"
+                         FontSize="14" BorderThickness="0" FontWeight="SemiBold"
+                         Click="AddBoard" HorizontalContentAlignment="Left" Content="+ New Board">
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.8" ShadowDepth="1" Opacity="0.2"/>
+                    </Button.BitmapEffect>
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </Button.Resources>
                 </Button>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="BOARDS" FontSize="11" FontFamily="Lato" Foreground="#686A6A" Margin="20 10 0 0" FontWeight="SemiBold" />
+                    <Line StrokeThickness="1" Stroke="#686A6A" X1="0" X2="80" Y1="0" Y2="0" Margin="5 22 0 0"/>
+                </StackPanel>
+                
             </StackPanel>
+            
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                    <StackPanel >
-                        <ItemsControl ItemsSource="{Binding boardList}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Vertical">
-                                    <Button Padding="10" Grid.Column="0" Grid.Row="1"  
-                                            HorizontalAlignment="Center" VerticalAlignment="top" Margin="20 5" 
-                                            Tag="{Binding}" Click="UpdateViewModel" MaxWidth="120">
+                <StackPanel >
+                    <ItemsControl ItemsSource="{Binding boardList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Button Style="{DynamicResource HomeButtons}" Padding="16 9" Grid.Column="0" Grid.Row="1"  Width="140"
+                                            HorizontalAlignment="Left" VerticalAlignment="top" Margin="20 8 0 5" 
+                                            Background="#F3F7F8" Foreground="#686A6A" FontFamily="Lato"
+                                            FontSize="14" BorderThickness="0" FontWeight="SemiBold"
+                                            Tag="{Binding}" Click="UpdateViewModel" MaxWidth="140"
+                                            HorizontalContentAlignment="Left">
                                         <TextBlock Text="{Binding BoardName}" TextWrapping="Wrap" TextAlignment="Center"/>
+                                        <Button.BitmapEffect>
+                                            <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.5" ShadowDepth="0.5" Opacity="0.2"/>
+                                        </Button.BitmapEffect>
                                         <Button.Resources>
-                                                <Style TargetType="Border">
-                                                    <Setter Property="CornerRadius" Value="10"/>
-                                                </Style>
-                                            </Button.Resources>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </ScrollViewer>
-            <Button Grid.Row="2" Margin="30 10" Content="Log Out" Click="Logout" Command="{Binding UpdateCurrentViewModelCommand}"
-                         CommandParameter="{x:Static nav:ViewType.Login}">
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="10"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Button Style="{DynamicResource HomeButtons}" Grid.Row="2" Margin="20 15 10 20" Content="Log Out" 
+                    Click="Logout" Command="{Binding UpdateCurrentViewModelCommand}"
+                    CommandParameter="{x:Static nav:ViewType.Login}"
+                    Width="140" HorizontalAlignment="Left" Padding="16 9"
+                    FontSize="14" BorderThickness="0" FontWeight="SemiBold"
+                     Background="#F3F7F8" Foreground="#686A6A" FontFamily="Lato">
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="gray" Direction="320" Softness="0.5" ShadowDepth="0.5" Opacity="0.2"/>
+                </Button.BitmapEffect>
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -143,11 +164,11 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <Image HorizontalAlignment="Center" Height="60" Margin="0,30,0,0" Grid.Row="0"  VerticalAlignment="Top" Width="500" Source="/kando_logo.png"/>
+            <Image HorizontalAlignment="Right" Height="50" Margin="0,40,50,0" Grid.Row="0"  VerticalAlignment="Top" Width="250" Source="/kando_logo.png"/>
         </Grid>
 
 
-        <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="2">
+        <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
             <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
         </ScrollViewer>
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj": {}
+    "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+    "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
         "projectName": "Kan-Do.Domain",
-        "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
-        "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\obj\\",
+        "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+        "packagesPath": "C:\\Users\\seren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,17 +67,17 @@
         }
       }
     },
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
+    "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+        "projectUniqueName": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
         "projectName": "Kan-Do.EntityFramework",
-        "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
-        "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
+        "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\seren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,8 +91,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
-                "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
+              "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+                "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
               }
             }
           }
@@ -144,17 +144,17 @@
         }
       }
     },
-    "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj": {
+    "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
+        "projectUniqueName": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
         "projectName": "Kan-Do.WPF",
-        "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
-        "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do\\obj\\",
+        "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\Kan-Do.WPF.csproj",
+        "packagesPath": "C:\\Users\\seren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,11 +168,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
-                "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
+              "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+                "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
               },
-              "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
-                "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj"
+              "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj": {
+                "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj"
               }
             }
           }
