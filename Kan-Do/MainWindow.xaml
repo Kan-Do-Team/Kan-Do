@@ -5,36 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nav="clr-namespace:Kan_Do.WPF.State.Navigators"
         xmlns:local="clr-namespace:Kan_Do.WPF"
+        xmlns:vm="clr-namespace:Kan_Do.WPF.ViewModels"
         xmlns:converters="clr-namespace:Kan_Do.WPF.Converters"
-        Title="MainWindow" Height="600" Width="800" MaxWidth="1920" MaxHeight="1080"
-        SizeToContent="WidthAndHeight">
+        Title="MainWindow" Height="auto" Width="auto" MaxWidth="1920" MaxHeight="1080"
+>
     <Window.Resources>
         <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MaxWidth="160"/>
-            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="auto" MaxWidth="160">
+                <ColumnDefinition.Style>
+                    <Style TargetType="{x:Type ColumnDefinition}">
+                        <Setter Property="Width" Value="Auto" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}" Value="False">
+                                <Setter Property="Width" Value="0" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ColumnDefinition.Style>
+            </ColumnDefinition>
+            <ColumnDefinition Width="0"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" MaxHeight="120"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
         <Grid>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
                 <StackPanel>
-                    <Label Content="Hello"  FontSize="19" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0 15 0 0"/>
+                    <Label Content="Hello" FontSize="19" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0 15 0 0"/>
                     <TextBlock Text="{Binding Authenticator.CurrentAccount.AccountHolder.FirstName}" Typography.Capitals="AllSmallCaps"
                                FontSize="23" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
                 </StackPanel>
-                <Grid Grid.Row="1" Background="Black"/>
             </Grid>
             
             <Grid.Style>
@@ -70,20 +77,12 @@
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical">
-                <Button  Padding="10" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="20 5" Command="{Binding UpdateCurrentViewModelCommand}"
-                         CommandParameter="{x:Static nav:ViewType.Home}">My Board
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <Button  Padding="12 7" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="45 10" Command="{Binding UpdateCurrentViewModelCommand}"
-                         CommandParameter="{x:Static nav:ViewType.Board}">+
+                <Button  Padding="12 7" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="top" Margin="10 10" Click="AddBoard">Add Board
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -91,7 +90,28 @@
                     </Button.Resources>
                 </Button>
             </StackPanel>
-
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel >
+                        <ItemsControl ItemsSource="{Binding boardList}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                    <Button Padding="10" Grid.Column="0" Grid.Row="1"  
+                                            HorizontalAlignment="Center" VerticalAlignment="top" Margin="20 5" 
+                                            Tag="{Binding}" Click="UpdateViewModel" MaxWidth="120">
+                                        <TextBlock Text="{Binding BoardName}" TextWrapping="Wrap" TextAlignment="Center"/>
+                                        <Button.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="10"/>
+                                                </Style>
+                                            </Button.Resources>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
             <Button Grid.Row="2" Margin="30 10" Content="Log Out" Click="Logout" Command="{Binding UpdateCurrentViewModelCommand}"
                          CommandParameter="{x:Static nav:ViewType.Login}">
                 <Button.Resources>
@@ -127,8 +147,8 @@
         </Grid>
 
 
-        <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Row="1" Grid.Column="2">
-            <ContentControl Margin="5" Content="{Binding Navigator.CurrentViewModel}"/>
+        <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="2">
+            <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
         </ScrollViewer>
 
         </Grid>

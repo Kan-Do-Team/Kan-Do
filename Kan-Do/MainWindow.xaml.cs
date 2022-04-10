@@ -27,9 +27,22 @@ namespace Kan_Do.WPF
             DataContext = dataContext;
         }
 
-        public void Logout(object sender, EventArgs e)
+        public void Logout(object sender, RoutedEventArgs e)
         {
             ((MainViewModel) DataContext).Logout();
         }
+
+        public void AddBoard(object sender, RoutedEventArgs e)
+        {
+            KanbanBoardViewModel board = new KanbanBoardViewModel();
+            ((MainViewModel)DataContext).AddBoard(board);
+        }
+
+        public void UpdateViewModel(object sender, RoutedEventArgs e)
+        {
+            KanbanBoardViewModel board = ((Button)sender).Tag as KanbanBoardViewModel;
+            ((MainViewModel)DataContext).UpdateCurrentViewModelCommand.Execute(board);
+        }
+
     }
 }

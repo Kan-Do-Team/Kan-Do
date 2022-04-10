@@ -22,7 +22,7 @@ namespace Kan_Do.WPF.Commands
             _navigator = navigator;
             _viewModelFactory = viewModelFactory;
         }
-        
+
         public bool CanExecute(object? parameter)
         {
             return true;
@@ -36,6 +36,10 @@ namespace Kan_Do.WPF.Commands
 
                _navigator.CurrentViewModel = _viewModelFactory.CreateViewModel(viewType);
 
+            }
+            else
+            {
+                _navigator.CurrentViewModel = (KanbanBoardViewModel)parameter;
             }
         }
     }
