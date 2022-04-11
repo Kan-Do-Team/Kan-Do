@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Kan_Do.WPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UserSecretsId>dce2bc94-fc1c-491c-b5ba-dd7d7d516ed7</UserSecretsId>
+    <ApplicationIcon>64_48_32_24_16_Kando.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="kando_logo.png" />
+    <None Remove="Views\images\login.png" />
+    <None Remove="Views\images\logo_white.png" />
+    <None Remove="Views\login.png" />
+    <None Remove="Views\logo_white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="64_48_32_24_16_Kando.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="PasswordBoxMVVM" Version="1.0.5" />
+    <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kan-Do.Domain\Kan-Do.Domain.csproj" />
+    <ProjectReference Include="..\Kan-Do.EntityFramework\Kan-Do.EntityFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PasswordBoxMVVM">
+      <HintPath>..\..\..\..\.nuget\packages\passwordboxmvvm\1.0.5\lib\netcoreapp3.1\PasswordBoxMVVM.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="kando_logo.png" />
+    <Resource Include="Views\images\login.png" />
+    <Resource Include="Views\images\logo_white.png" />
+  </ItemGroup>
+
+</Project>
