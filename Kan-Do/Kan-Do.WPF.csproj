@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Remove="kando_logo.png" />
+    <None Remove="photo-1649362948079-4bc100d0d44d.jpg" />
     <None Remove="Views\images\login.png" />
     <None Remove="Views\images\logo_white.png" />
     <None Remove="Views\login.png" />
@@ -43,6 +44,7 @@
 
   <ItemGroup>
     <Resource Include="kando_logo.png" />
+    <Resource Include="photo-1649362948079-4bc100d0d44d.jpg" />
     <Resource Include="Views\images\login.png" />
     <Resource Include="Views\images\logo_white.png" />
   </ItemGroup>

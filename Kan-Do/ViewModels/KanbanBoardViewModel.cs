@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Kan_Do.WPF.Views;
 using Kan_Do.WPF.State.Navigators;
+using System.Windows.Input;
+using Kan_Do.WPF.Commands;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -25,7 +27,11 @@ namespace Kan_Do.WPF.ViewModels
         //List of the KanbanColumn class
         public ObservableCollection<KanbanColumn> boardColumns { get; set; }
 
+        public int cardCount { get; set; }
+        
         public GalaSoft.MvvmLight.Command.RelayCommand<object> ProcessCardDetails { get; set; }
+
+        public ICommand CardDropCommand { get; }
 
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
@@ -46,7 +52,8 @@ namespace Kan_Do.WPF.ViewModels
         //Constructor
         public KanbanBoardViewModel()
         {
-            
+            cardCount = 0;
+            CardDropCommand = new CardDropCommand();
             boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);
@@ -134,20 +141,47 @@ namespace Kan_Do.WPF.ViewModels
                 view.ShowDialog();
 
                 string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
-                int cardID = columnCardList.Count();
+                int cardID = cardCount;
                 DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
                 DateTime dateCreated = DateTime.Today;
                 int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
                 string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
                 string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
                 int columnId = columnnumber + 1;
-
+                cardCount += 1;
+                
                 boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
             }
+        }
+
+        public KanbanCard cardDetails(KanbanCard card)
+        {
+            try
+            {
+                CardDetailWindow view = new CardDetailWindow(card.ColumnId);
+                //view.DataContext = childViewModel;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName = card.CardName;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate = card.DueDate;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority = card.Priority;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription = card.TaskDescription;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee = card.Assignee;
+                view.ShowDialog();
+                card.CardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                card.DueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                card.Priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                card.TaskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                card.Assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
+            }
+            return card;
         }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
