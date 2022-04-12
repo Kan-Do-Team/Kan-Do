@@ -51,12 +51,18 @@ namespace Kan_Do.WPF
             set { mcolumnId = value; }
         }
 
+        public void removeCard(KanbanCard card)
+        {
+            column_cards.Remove(column_cards.Where(i => i.CardID == card.CardID).Single());
+            OnPropertyChanged(nameof(column_cards));
+        }
+        
         //Added property change notification for columns
         #region INotifyPropertyChanged Columns
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
 
