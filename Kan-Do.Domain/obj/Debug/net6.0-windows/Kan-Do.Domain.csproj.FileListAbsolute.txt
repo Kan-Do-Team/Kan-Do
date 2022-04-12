@@ -46,3 +46,15 @@ C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-wi
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\refint\Kan-Do.Domain.dll
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.pdb
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\ref\Kan-Do.Domain.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.deps.json
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\bin\Debug\net6.0-windows\Kan-Do.Domain.pdb
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.csproj.AssemblyReference.cache
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.AssemblyInfoInputs.cache
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.AssemblyInfo.cs
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\refint\Kan-Do.Domain.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\Kan-Do.Domain.pdb
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do.Domain\obj\Debug\net6.0-windows\ref\Kan-Do.Domain.dll

@@ -16,9 +16,12 @@ namespace Kan_Do.WPF.ViewModels
 
         public GalaSoft.MvvmLight.Command.RelayCommand ReturnCardDetails { get; set; }
 
+        public bool closedWithSave { get; set; }
+
         //Constructor
         public CardDetailWindowViewModel()
         {
+            closedWithSave = false;
             KCard = new KanbanCard();
             KCard.DueDate = DateTime.Now;
             ReturnCardDetails = new GalaSoft.MvvmLight.Command.RelayCommand(ProcessCardDetails);
@@ -119,8 +122,10 @@ namespace Kan_Do.WPF.ViewModels
 
         private void ProcessCardDetails()
         {
-            var CRelayModel = this;
-            Messenger.Default.Send<CardDetailWindowViewModel>(CRelayModel);
+           var CRelayModel = this;
+           Messenger.Default.Send<CardDetailWindowViewModel>(CRelayModel);
+
+
         }
 
         private object RecieveCardInfo(CardDetailWindowViewModel context)
