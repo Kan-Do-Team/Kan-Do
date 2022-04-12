@@ -61,7 +61,7 @@ namespace Kan_Do.WPF.Views
             KCardVM.KCard.TaskDescription = cardDetails.TaskDescription;
             KCardVM.SaveCardDetails(KCardVM.KCard.CardName, KCardVM.KCard.CardID, KCardVM.KCard.DueDate, KCardVM.KCard.Priority, KCardVM.KCard.TaskDescription, KCardVM.KCard.Assignee, KCardVM.KCard.CardID);
             */
-
+            ((CardDetailWindowViewModel)(this.DataContext)).closedWithSave = true;
             this.Close();
         }
 
