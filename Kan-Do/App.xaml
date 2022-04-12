@@ -118,6 +118,37 @@
                 </Setter>
             </Style>
 
+            <Style x:Key="NewCardTextBoxStyle"
+                   TargetType="{x:Type TextBox}">
+                <Setter Property="FontFamily" Value="Lato"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border x:Name="Border"
+                        CornerRadius="10"
+                        Padding="8"
+                        BorderThickness="1">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Transparent" />
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="Gray" />
+                                </Border.BorderBrush>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="Disabled" />
+                                        <VisualState x:Name="MouseOver" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style x:Key="LoginButtonStyle" TargetType="{x:Type Button}">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderBrush" Value="white"/>

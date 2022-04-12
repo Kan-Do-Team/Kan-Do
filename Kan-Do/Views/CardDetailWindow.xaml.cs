@@ -61,7 +61,7 @@ namespace Kan_Do.WPF.Views
             KCardVM.KCard.TaskDescription = cardDetails.TaskDescription;
             KCardVM.SaveCardDetails(KCardVM.KCard.CardName, KCardVM.KCard.CardID, KCardVM.KCard.DueDate, KCardVM.KCard.Priority, KCardVM.KCard.TaskDescription, KCardVM.KCard.Assignee, KCardVM.KCard.CardID);
             */
-
+            ((CardDetailWindowViewModel)(this.DataContext)).closedWithSave = true;
             this.Close();
         }
 
@@ -85,7 +85,7 @@ namespace Kan_Do.WPF.Views
         {
             //Generate the datetime for today, output to the UI and save in the viewmodel
             DateTime thisDay = DateTime.Today;
-            DateCreatedTxtBx.Text = thisDay.ToString("D");
+            //DateCreatedTxtBx.Text = thisDay.ToString("D");
             KCardVM.KCard.DateCreated = thisDay;
             //KCardVM.KCard.CardName = String.Empty;
             //KCardVM.KCard.TaskDescription = String.Empty;
