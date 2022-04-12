@@ -85,7 +85,7 @@ namespace Kan_Do.WPF.Views
         {
             //Generate the datetime for today, output to the UI and save in the viewmodel
             DateTime thisDay = DateTime.Today;
-            DateCreatedTxtBx.Text = thisDay.ToString("D");
+            //DateCreatedTxtBx.Text = thisDay.ToString("D");
             KCardVM.KCard.DateCreated = thisDay;
             //KCardVM.KCard.CardName = String.Empty;
             //KCardVM.KCard.TaskDescription = String.Empty;
