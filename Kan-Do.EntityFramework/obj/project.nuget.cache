@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p+u0L/dYq+ccRbSLexjJ10Fj9xeAtb5gu+GHqzAqIfkqS0CYxC3mK1a2nAmO6+XW5TNENWkgKKAXFmACtLXn9Q==",
+  "dgSpecHash": "P/SQLOYbHCz+2YsOJU3xQ+YxvDELQgz4M3VYwyso7HwaA2PUkaAItEQrBYoO4AaR2CUW3X+fnDPQJT/MuFxZTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+  "projectFilePath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nasir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

@@ -39,11 +39,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
       "projectName": "Kan-Do.Domain",
-      "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
       "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",

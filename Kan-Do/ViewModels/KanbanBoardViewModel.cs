@@ -216,10 +216,21 @@ namespace Kan_Do.WPF.ViewModels
                             boardColumns.RemoveAt(col);
                             //Place the list elements back into the observable collection (overwriting the previous values)
                             boardColumns.Insert(col, list[i]);
+                            boardColumns[col].ColumnId = col + 1;
                             col++;
                         }
                     }
                 }
+                mcolId--;
+                for (int i = columnnumber; i < boardColumns.Count; i++)
+                {
+                    for (int j = 0; j < boardColumns[i].column_cards.Count; j++)
+                    {
+                        boardColumns[i].column_cards[j].ColumnId = i+1;
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("Shift column right function success");
 
                 System.Diagnostics.Debug.WriteLine("Delete column function success");
             }
@@ -240,8 +251,18 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber;
                     boardColumns[columnnumber - 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber - 1);
+                    for (int i = 0; i < boardColumns[columnnumber].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber].column_cards[i].ColumnId = columnnumber + 1;
+                    }
+                    for (int i = 0; i < boardColumns[columnnumber - 1].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber - 1].column_cards[i].ColumnId = columnnumber;
+                    }
                 }
+                
 
+                System.Diagnostics.Debug.WriteLine("Shift column right function success");
                 System.Diagnostics.Debug.WriteLine("Shift column left function success");
             }
 
@@ -254,6 +275,7 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 1;
                     boardColumns[columnnumber - 1].ColumnId = columnnumber;
                 }
+               
                 System.Diagnostics.Debug.WriteLine("Shift colum left function exception:", ex.ToString()); ;
             }
 
@@ -270,8 +292,16 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 2;
                     boardColumns[columnnumber + 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber + 1);
+                    for (int i = 0; i < boardColumns[columnnumber].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber].column_cards[i].ColumnId = columnnumber + 1;
+                    }
+                    for (int i = 0; i < boardColumns[columnnumber + 1].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber + 1].column_cards[i].ColumnId = columnnumber + 2;
+                    }
                 }
-
+                
                 System.Diagnostics.Debug.WriteLine("Shift column right function success");
             }
 
@@ -280,9 +310,6 @@ namespace Kan_Do.WPF.ViewModels
                 if (columnnumber < (boardColumns.Count() - 1))
                 {
                     boardColumns[columnnumber].ColumnNumber = columnnumber;
-                    boardColumns[columnnumber + 1].ColumnNumber = columnnumber + 1;
-                    boardColumns[columnnumber].ColumnId = columnnumber + 1;
-                    boardColumns[columnnumber + 1].ColumnId = columnnumber + 2;
                 }
                 System.Diagnostics.Debug.WriteLine("Shift column right function exception:", ex.ToString()); ;
             }
