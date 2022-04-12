@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F+IC2l0aTnBZbf549XZAqm0QXVQ6UJQPMV4o4DZVVO3HFtI4AWGF8BwCmPWNUfQTUtc9fXrg4uIHNXla7szpAQ==",
+  "dgSpecHash": "xueYggAahUC+v9GmpnJQO3IAT7VTA+XaDJMxISRCQU7Jbs8JaSiYq8lsQir1d4TZ+IdCSzdn90NE6hj3bJMe3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\seren\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512"
+    "C:\\Users\\Nasir\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512"
   ],
   "logs": [
     {

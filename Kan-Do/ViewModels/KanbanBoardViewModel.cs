@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Kan_Do.WPF.Views;
 using Kan_Do.WPF.State.Navigators;
+using System.Windows.Input;
+using Kan_Do.WPF.Commands;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -25,7 +27,11 @@ namespace Kan_Do.WPF.ViewModels
         //List of the KanbanColumn class
         public ObservableCollection<KanbanColumn> boardColumns { get; set; }
 
+        public int cardCount { get; set; }
+        
         public GalaSoft.MvvmLight.Command.RelayCommand<object> ProcessCardDetails { get; set; }
+
+        public ICommand CardDropCommand { get; }
 
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
@@ -46,7 +52,8 @@ namespace Kan_Do.WPF.ViewModels
         //Constructor
         public KanbanBoardViewModel()
         {
-            
+            cardCount = 0;
+            CardDropCommand = new CardDropCommand();
             boardColumns = new ObservableCollection<KanbanColumn>();
             FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);
@@ -132,22 +139,53 @@ namespace Kan_Do.WPF.ViewModels
                 CardDetailWindow view = new CardDetailWindow(columnnumber);
                 //view.DataContext = childViewModel;
                 view.ShowDialog();
+                if (((CardDetailWindowViewModel)view.DataContext).closedWithSave)
+                {
+                    string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                    int cardID = cardCount;
+                    DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                    DateTime dateCreated = DateTime.Today;
+                    int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                    string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                    string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                    int columnId = columnnumber + 1;
+                    cardCount += 1;
 
-                string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
-                int cardID = columnCardList.Count();
-                DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
-                DateTime dateCreated = DateTime.Today;
-                int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
-                string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
-                string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
-                int columnId = columnnumber + 1;
-
-                boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
+                    boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
+                }
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
             }
+        }
+
+        public KanbanCard cardDetails(KanbanCard card)
+        {
+            try
+            {
+                CardDetailWindow view = new CardDetailWindow(card.ColumnId);
+                //view.DataContext = childViewModel;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName = card.CardName;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate = card.DueDate;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority = card.Priority;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription = card.TaskDescription;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee = card.Assignee;   
+                view.ShowDialog();
+                if (((CardDetailWindowViewModel)view.DataContext).closedWithSave)
+                {
+                    card.CardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                    card.DueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                    card.Priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                    card.TaskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                    card.Assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Add card function exception:", ex.ToString()); ;
+            }
+            return card;
         }
 
         //Once an item is deleted, the list needs to shift elements and adjust the columnNumber field (tells order in the UI)
@@ -182,10 +220,21 @@ namespace Kan_Do.WPF.ViewModels
                             boardColumns.RemoveAt(col);
                             //Place the list elements back into the observable collection (overwriting the previous values)
                             boardColumns.Insert(col, list[i]);
+                            boardColumns[col].ColumnId = col + 1;
                             col++;
                         }
                     }
                 }
+                mcolId--;
+                for (int i = columnnumber; i < boardColumns.Count; i++)
+                {
+                    for (int j = 0; j < boardColumns[i].column_cards.Count; j++)
+                    {
+                        boardColumns[i].column_cards[j].ColumnId = i+1;
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("Shift column right function success");
 
                 System.Diagnostics.Debug.WriteLine("Delete column function success");
             }
@@ -206,8 +255,18 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber;
                     boardColumns[columnnumber - 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber - 1);
+                    for (int i = 0; i < boardColumns[columnnumber].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber].column_cards[i].ColumnId = columnnumber + 1;
+                    }
+                    for (int i = 0; i < boardColumns[columnnumber - 1].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber - 1].column_cards[i].ColumnId = columnnumber;
+                    }
                 }
+                
 
+                System.Diagnostics.Debug.WriteLine("Shift column right function success");
                 System.Diagnostics.Debug.WriteLine("Shift column left function success");
             }
 
@@ -220,6 +279,7 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 1;
                     boardColumns[columnnumber - 1].ColumnId = columnnumber;
                 }
+               
                 System.Diagnostics.Debug.WriteLine("Shift colum left function exception:", ex.ToString()); ;
             }
 
@@ -236,8 +296,16 @@ namespace Kan_Do.WPF.ViewModels
                     boardColumns[columnnumber].ColumnId = columnnumber + 2;
                     boardColumns[columnnumber + 1].ColumnId = columnnumber + 1;
                     boardColumns.Move(columnnumber, columnnumber + 1);
+                    for (int i = 0; i < boardColumns[columnnumber].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber].column_cards[i].ColumnId = columnnumber + 1;
+                    }
+                    for (int i = 0; i < boardColumns[columnnumber + 1].column_cards.Count; i++)
+                    {
+                        boardColumns[columnnumber + 1].column_cards[i].ColumnId = columnnumber + 2;
+                    }
                 }
-
+                
                 System.Diagnostics.Debug.WriteLine("Shift column right function success");
             }
 
@@ -246,9 +314,6 @@ namespace Kan_Do.WPF.ViewModels
                 if (columnnumber < (boardColumns.Count() - 1))
                 {
                     boardColumns[columnnumber].ColumnNumber = columnnumber;
-                    boardColumns[columnnumber + 1].ColumnNumber = columnnumber + 1;
-                    boardColumns[columnnumber].ColumnId = columnnumber + 1;
-                    boardColumns[columnnumber + 1].ColumnId = columnnumber + 2;
                 }
                 System.Diagnostics.Debug.WriteLine("Shift column right function exception:", ex.ToString()); ;
             }
