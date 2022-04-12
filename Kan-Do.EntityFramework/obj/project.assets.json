@@ -1909,11 +1909,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+      "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
       "projectName": "Kan-Do.EntityFramework",
-      "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
+      "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.EntityFramework\\Kan-Do.EntityFramework.csproj",
       "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
+      "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.EntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1930,8 +1930,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
-              "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
+            "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj": {
+              "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do-Team\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj"
             }
           }
         }
