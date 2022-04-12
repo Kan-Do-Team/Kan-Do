@@ -139,18 +139,20 @@ namespace Kan_Do.WPF.ViewModels
                 CardDetailWindow view = new CardDetailWindow(columnnumber);
                 //view.DataContext = childViewModel;
                 view.ShowDialog();
+                if (((CardDetailWindowViewModel)view.DataContext).closedWithSave)
+                {
+                    string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                    int cardID = cardCount;
+                    DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                    DateTime dateCreated = DateTime.Today;
+                    int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                    string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                    string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                    int columnId = columnnumber + 1;
+                    cardCount += 1;
 
-                string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
-                int cardID = cardCount;
-                DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
-                DateTime dateCreated = DateTime.Today;
-                int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
-                string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
-                string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
-                int columnId = columnnumber + 1;
-                cardCount += 1;
-                
-                boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
+                    boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
+                }
             }
             catch (Exception ex)
             {
@@ -168,14 +170,16 @@ namespace Kan_Do.WPF.ViewModels
                 ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate = card.DueDate;
                 ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority = card.Priority;
                 ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription = card.TaskDescription;
-                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee = card.Assignee;
+                ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee = card.Assignee;   
                 view.ShowDialog();
-                card.CardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
-                card.DueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
-                card.Priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
-                card.TaskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
-                card.Assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
-
+                if (((CardDetailWindowViewModel)view.DataContext).closedWithSave)
+                {
+                    card.CardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
+                    card.DueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
+                    card.Priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
+                    card.TaskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
+                    card.Assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
+                }
             }
             catch (Exception ex)
             {
