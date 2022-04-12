@@ -27,11 +27,11 @@ The latest build can always be found in the [Releases] section. Currently, this 
 
 > **Custom Boards**
 > 
-![Board Addition](images/features3.gif)
+![Board Addition](images/newboard.gif)
 
 > **Dynamic Cards**
 > 
-![Card Manipulation](images/features2.gif)
+![Card Manipulation](images/newcard.gif)
 
 
 ## Future Updates
