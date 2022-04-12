@@ -34,19 +34,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\seren\\.nuget\\packages\\": {}
+    "C:\\Users\\Nasir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
       "projectName": "Kan-Do.Domain",
-      "projectPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
-      "packagesPath": "C:\\Users\\seren\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\seren\\source\\repos\\pierce-exe\\Kan-Do\\Kan-Do.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\Kan-Do.Domain.csproj",
+      "packagesPath": "C:\\Users\\Nasir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nasir\\Documents\\GitHub\\Kan-Do\\Kan-Do.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\seren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nasir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
