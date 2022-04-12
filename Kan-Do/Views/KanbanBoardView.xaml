@@ -157,18 +157,19 @@
                                                                                     FontSize="10"></Label>
                                                                             </Border>
                                                                             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
-                                                                                <Button x:Name="EditCardButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Margin="0 0 0 0" Padding="0 0 0 0" Width="20" Height="24"  FontSize="12"
-                                                                                        Content="✎" HorizontalAlignment="Left" Click="EditCard" BorderThickness="0" Background="#C4C4C4" FontWeight="SemiBold"
+                                                                                <Button x:Name="EditCardButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Margin="0 0 5 0"  Padding="0" 
+                                                                                         HorizontalAlignment="Left" Click="EditCard" BorderThickness="0" Background="white" 
                                                                                         Foreground="white" ToolTip="Edit Card">
                                                                                     <Button.Resources>
                                                                                         <Style TargetType="Border">
                                                                                             <Setter Property="CornerRadius" Value="20"/>
                                                                                         </Style>
                                                                                     </Button.Resources>
+                                                                                    <Image Source="/Views/images/editicon.png" Width="15"/>
                                                                                 </Button>
-                                                                                <Button x:Name="RemoveCardButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Margin="5 0 0 0" Padding="0 0 0 0" Width="20" Height="24"  FontSize="16"
-                                                                                        Content="x" HorizontalAlignment="Right" Click="RemoveCard" BorderThickness="0" Background="#C4C4C4" FontWeight="SemiBold"
-                                                                                        Foreground="white" ToolTip="Delete Card">
+                                                                                <Button x:Name="RemoveCardButton" Style="{DynamicResource HomeButtons}" Tag="{Binding}" Margin="5 0 0 0" Padding="0 0 0 0" Width="20" Height="24"  FontSize="19"
+                                                                                        Content="x" HorizontalAlignment="Right" Click="RemoveCard" BorderThickness="0" Background="white" FontWeight="SemiBold"
+                                                                                        Foreground="#C4C4C4" ToolTip="Delete Card">
                                                                                     <Button.Resources>
                                                                                         <Style TargetType="Border">
                                                                                             <Setter Property="CornerRadius" Value="20"/>

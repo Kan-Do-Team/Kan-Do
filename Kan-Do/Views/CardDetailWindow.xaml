@@ -6,9 +6,80 @@
         xmlns:local="clr-namespace:Kan_Do.WPF.Views"
         xmlns:VM="clr-namespace:Kan_Do.WPF.ViewModels"
         mc:Ignorable="d"
-        Title="New Card" Height="400" Width="700">
+        Title="New Card" Height="480" Width="300" MaxHeight="480" MaxWidth="300">
     <Grid>
-        <TextBox x:Name="textCardTitle" Text="{Binding cardName, UpdateSourceTrigger=LostFocus}" HorizontalAlignment="Left" Margin="205,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447" Height="61" FontSize="20" FontWeight="Bold"/>
+        <StackPanel Margin="20 50 20 0">
+            <Label Content="New Card" FontFamily="Lato" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"
+               FontSize="25"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Label Content="TASK NAME" FontFamily="Lato" FontSize="12" Margin="0 10 0 0"/>
+                <TextBox x:Name="textCardTitle" Grid.Row="1" Style="{DynamicResource NewCardTextBoxStyle}"  Text="{Binding cardName, UpdateSourceTrigger=LostFocus}" 
+                         TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                <Label Content="PRIORITY" Grid.Column="1" FontFamily="Lato" FontSize="12" Margin="0 10 0 0" HorizontalAlignment="Right"/>
+                <ComboBox x:Name="PriorityComboBx" Margin="10 0 0 0"  Grid.Column="1" Grid.Row="1" SelectedItem="{Binding priority, UpdateSourceTrigger=LostFocus}" 
+                          IsReadOnly="True" FontFamily="Lato" Background="White" MinWidth="65" HorizontalAlignment="Right">
+                </ComboBox>
+            </Grid>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Content="DUE DATE" FontFamily="Lato" FontSize="12" Margin="0 10 0 0"/>
+                <Label Content="ASSIGNEE" Grid.Column="1" FontFamily="Lato" FontSize="12" Margin="0 10 0 0"/>
+
+                <DatePicker x:Name="DueDatePicker" Grid.Column="0" Grid.Row="1" Margin="0 0 10 0"  HorizontalContentAlignment="Center" 
+                            SelectedDate="{Binding dueDate, UpdateSourceTrigger=LostFocus}" Padding="8" FontFamily="Lato">
+                    <DatePicker.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <TextBox x:Name="AssigneeTextBx" Grid.Column="1" Grid.Row="1" Text="{Binding assignee, UpdateSourceTrigger=LostFocus}" TextWrapping="Wrap" 
+                         Style="{DynamicResource NewCardTextBoxStyle}" AcceptsReturn="True"  />
+            </Grid>
+
+            <Label Content="DESCRIPTION" FontFamily="Lato" FontSize="12" Margin="0 10 0 0"/>
+            <TextBox x:Name="DescriptionTxtBox"  TextWrapping="Wrap" Style="{DynamicResource NewCardTextBoxStyle}" Text="{Binding taskDescription, UpdateSourceTrigger=LostFocus}" 
+                     AcceptsReturn="True" MinHeight="100"/>
+
+            <Button x:Name="SaveCardInfoBtn" Style="{DynamicResource HomeButtons}" Content="SAVE"  Command="{Binding ReturnCardDetails}" 
+                    FontFamily="Lato" Margin="0 20 0 0" Padding="10" Background="#1A9988" BorderThickness="0" 
+                    FontWeight="Bold" Foreground="White">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+
+        </StackPanel>
+        
+        
+        
+
+        
+        <!--<TextBox x:Name="textCardTitle" Text="{Binding cardName, UpdateSourceTrigger=LostFocus}" HorizontalAlignment="Left" Margin="205,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447" Height="61" FontSize="20" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Margin="205,85,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <TextBox x:Name="DescriptionTxtBox" Margin="205,117,10,10" Text="{Binding taskDescription, UpdateSourceTrigger=LostFocus}" TextWrapping="Wrap" AcceptsReturn="True" MaxHeight="240" MaxWidth="500"/>
 
@@ -31,6 +102,6 @@
             <TextBox TextWrapping="Wrap" Text="Assignee:" TextAlignment="Left" Width="80" Height="27" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" IsReadOnly="True"/>
             <TextBox x:Name="AssigneeTextBx" Text="{Binding assignee, UpdateSourceTrigger=LostFocus}" TextWrapping="Wrap" Width="97" Height="27" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <Button x:Name="SaveCardInfoBtn" Content="Save" Margin="80,290,500,40" Command="{Binding ReturnCardDetails}"/>
+        <Button x:Name="SaveCardInfoBtn" Content="Save" Margin="80,290,500,40" Command="{Binding ReturnCardDetails}"/> -->
     </Grid>
 </Window>
