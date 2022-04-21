@@ -11,8 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="KanbanCard.cs" />
+    <Compile Remove="KanbanColumn.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="kando_logo.png" />
-    <None Remove="photo-1649362948079-4bc100d0d44d.jpg" />
     <None Remove="Views\editicon.png" />
     <None Remove="Views\images\login.png" />
     <None Remove="Views\images\logo_white.png" />
@@ -25,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="PasswordBoxMVVM" Version="1.0.5" />
     <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
@@ -45,7 +49,6 @@
 
   <ItemGroup>
     <Resource Include="kando_logo.png" />
-    <Resource Include="photo-1649362948079-4bc100d0d44d.jpg" />
     <Resource Include="Views\images\editicon.png" />
     <Resource Include="Views\images\login.png" />
     <Resource Include="Views\images\logo_white.png" />

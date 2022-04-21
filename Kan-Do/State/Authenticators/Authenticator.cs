@@ -13,7 +13,7 @@ namespace Kan_Do.WPF.State.Authenticators
     public class Authenticator : ObservableObject, IAuthenticator
     {
         private readonly IAuthenticationService _authenticationService;
-
+        public event Action LoggingIn;
         public Authenticator(IAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
@@ -27,10 +27,14 @@ namespace Kan_Do.WPF.State.Authenticators
         public async Task Login(string email, string password)
         {
             CurrentAccount = await _authenticationService.Login(email, password);
+            LoggingIn?.Invoke();
             OnPropertyChanged(nameof(IsLoggedIn));
             OnPropertyChanged(nameof(CurrentAccount));
 
         }
+
+ 
+
 
         public void Logout()
         {

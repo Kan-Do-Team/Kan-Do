@@ -12,6 +12,7 @@ namespace Kan_Do.WPF.State.Authenticators
     {
         Account CurrentAccount { get; }
         bool IsLoggedIn { get; }
+        event Action LoggingIn;
 
         Task<RegistrationResult> Register(string firstName, string lastName, string email, string password, string confirmPassword);
         Task Login(string email, string password);

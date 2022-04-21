@@ -16,7 +16,7 @@ namespace Kan_Do.WPF.Commands
         private readonly LoginPageViewModel _loginViewModel;
         private readonly IAuthenticator _authenticator;
         private readonly IRenavigator _renavigator;
-
+        public event Action loggingIn;
         public LoginCommand(LoginPageViewModel loginViewModel, IAuthenticator authenticator, IRenavigator renavigator)
         {
             _loginViewModel = loginViewModel;
@@ -30,6 +30,7 @@ namespace Kan_Do.WPF.Commands
             try
             {
                 await _authenticator.Login(_loginViewModel.Email, _loginViewModel.Password);
+                loggingIn?.Invoke();
 
                 _renavigator.Renavigate();
             }

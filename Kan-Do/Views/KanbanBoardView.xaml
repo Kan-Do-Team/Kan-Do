@@ -39,7 +39,7 @@
                 <Button x:Name="SaveBtn" Style="{DynamicResource HomeButtons}" Height="40" Grid.Row="0" Grid.Column="1"  
                         Content="SAVE" HorizontalAlignment="Left" VerticalAlignment="Center" 
                         Padding="20 10" FontFamily="Lato" FontWeight="Bold" Foreground="White"
-                        Background="#C4C4C4" BorderThickness="0" Margin="20 0 0 0">
+                        Background="#C4C4C4" BorderThickness="0" Margin="20 0 0 0" Command="{Binding SaveCommand}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="15"/>

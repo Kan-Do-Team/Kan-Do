@@ -22,6 +22,11 @@ namespace Kan_Do.EntityFramework.Services.Common
         {
             using (KanDoDbContext context = _dbContextFactory.CreateDbContext())
             {
+                var entityTrackingState = context.Entry(entity).State;
+                if (entity.GetType() != typeof(Account))
+                {
+                    context.Entry(entity).State = EntityState.Unchanged;
+                }
                 EntityEntry<T> createdResult = await context.Set<T>().AddAsync(entity);
                 await context.SaveChangesAsync();
 
