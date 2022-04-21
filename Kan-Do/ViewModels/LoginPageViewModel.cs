@@ -45,6 +45,7 @@ namespace Kan_Do.WPF.ViewModels
 
         public ICommand LoginCommand { get; }
         public ICommand ViewRegisterCommand { get; }
+        
 
         public LoginPageViewModel(IAuthenticator authenticator, IRenavigator loginRenavigator, IRenavigator registerRenavigator)
         {

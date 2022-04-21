@@ -11,6 +11,9 @@ using Kan_Do.WPF.Views;
 using Kan_Do.WPF.State.Navigators;
 using System.Windows.Input;
 using Kan_Do.WPF.Commands;
+using Kan_Do.WPF.State.Authenticators;
+using Kan_Do.Domain.Models;
+using Kan_Do.WPF.State.SaveState;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -28,10 +31,13 @@ namespace Kan_Do.WPF.ViewModels
         public ObservableCollection<KanbanColumn> boardColumns { get; set; }
 
         public int cardCount { get; set; }
-        
+        public int BoardId { get; set; }
         public GalaSoft.MvvmLight.Command.RelayCommand<object> ProcessCardDetails { get; set; }
 
+        public IAuthenticator Authenticator { get; }
+        public ISaveState SaveState { get; }
         public ICommand CardDropCommand { get; }
+        public ICommand SaveCommand { get; }
 
         //ColumnId keeps track of the given columnId in the boardColumns list
         private int mcolId;
@@ -50,12 +56,14 @@ namespace Kan_Do.WPF.ViewModels
         }
 
         //Constructor
-        public KanbanBoardViewModel()
+        public KanbanBoardViewModel(IAuthenticator authenticator, ISaveState saveState)
         {
+            Authenticator = authenticator;
+            SaveState = saveState;
+            SaveCommand = new SaveCommand(this, saveState);
             cardCount = 0;
             CardDropCommand = new CardDropCommand();
             boardColumns = new ObservableCollection<KanbanColumn>();
-            FillInitialColumns();
             ProcessCardDetails = new RelayCommand<object>(FetchCardDetails);
             Messenger.Default.Register<KanbanCard>(this, (action) => RecieveCardsDetails(action));
 
@@ -68,7 +76,7 @@ namespace Kan_Do.WPF.ViewModels
 
         //Function that fills the initial column values in the UI 
         //Default will be To Do, Doing and Done
-        private void FillInitialColumns()
+        public void FillInitialColumns()
         {
             boardColumns.Add(new KanbanColumn { ColumnName = "TO DO", ColumnNumber = 0, ColumnId = 1 });
             boardColumns.Add(new KanbanColumn { ColumnName = "DOING", ColumnNumber = 1, ColumnId = 2 });
@@ -144,14 +152,14 @@ namespace Kan_Do.WPF.ViewModels
                     string cardName = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).cardName;
                     int cardID = cardCount;
                     DateTime dueDate = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).dueDate;
-                    DateTime dateCreated = DateTime.Today;
+                    DateTime dateCreated = DateTime.Now;
                     int priority = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).priority;
                     string taskDescription = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).taskDescription;
                     string assignee = ((Kan_Do.WPF.ViewModels.CardDetailWindowViewModel)view.DataContext).assignee;
                     int columnId = columnnumber + 1;
                     cardCount += 1;
 
-                    boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
+                    boardColumns[columnnumber].column_cards.Add(new KanbanCard { CardName = cardName, CardID = cardID, DueDate = dueDate, DateCreated = dateCreated, Priority = priority, TaskDescription = taskDescription, Assignee = assignee, ColumnId = columnId });
                 }
             }
             catch (Exception ex)
@@ -333,7 +341,6 @@ namespace Kan_Do.WPF.ViewModels
         //public void deleteCard(int cardid)
 
         //public void moveCard(int cardid, int newcolumnid)
-
 
     }
 }
