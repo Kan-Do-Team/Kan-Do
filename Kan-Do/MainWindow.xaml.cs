@@ -34,9 +34,12 @@ namespace Kan_Do.WPF
 
         public void AddBoard(object sender, RoutedEventArgs e)
         {
-            KanbanBoardViewModel board = new KanbanBoardViewModel();
+            KanbanBoardViewModel board = new KanbanBoardViewModel(((MainViewModel)DataContext).Authenticator, ((MainViewModel)DataContext).SaveState);
+            board.FillInitialColumns();
             ((MainViewModel)DataContext).AddBoard(board);
+
         }
+
 
         public void UpdateViewModel(object sender, RoutedEventArgs e)
         {

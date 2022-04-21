@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Messaging;
+using Kan_Do.Domain.Models;
 
 namespace Kan_Do.WPF.ViewModels
 {
@@ -59,6 +60,17 @@ namespace Kan_Do.WPF.ViewModels
                 KCard.DueDate = value;
                 OnPropertyChanged(nameof(dueDate));
                 System.Diagnostics.Debug.WriteLine(KCard.DueDate);
+            }
+        }
+
+        public DateTime dateCreated
+        {
+            get { return KCard.DateCreated; }
+            set
+            {
+                KCard.DateCreated = value;
+                OnPropertyChanged(nameof(dateCreated));
+                System.Diagnostics.Debug.WriteLine(KCard.DateCreated);
             }
         }
 

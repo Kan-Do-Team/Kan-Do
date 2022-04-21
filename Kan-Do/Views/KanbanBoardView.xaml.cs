@@ -1,4 +1,5 @@
-﻿using Kan_Do.WPF.ViewModels;
+﻿using Kan_Do.Domain.Models;
+using Kan_Do.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -153,6 +154,7 @@ namespace Kan_Do.WPF.Views
             if (sender is FrameworkElement frameworkElement)
             {
                 KanbanCard tmpCard = (KanbanCard)frameworkElement.DataContext;
+
                 //Sends ColumnID to CardDetailWindow
                 KanbanCard edittedCard = ((KanbanBoardViewModel)DataContext).cardDetails(tmpCard);
                 int columnIndex = edittedCard.ColumnId - 1;

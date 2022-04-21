@@ -17,7 +17,7 @@ namespace Kan_Do.EntityFramework.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -41,6 +41,95 @@ namespace Kan_Do.EntityFramework.Migrations
                     b.HasIndex("AccountHolderId");
 
                     b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Board", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BoardCreatorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BoardName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BoardCreatorId");
+
+                    b.ToTable("Boards");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Card", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Assignee")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CardReferenceNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ColumnId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TaskDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColumnId");
+
+                    b.ToTable("Cards");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Column", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BoardId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ColumnName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BoardId");
+
+                    b.ToTable("Columns");
                 });
 
             modelBuilder.Entity("Kan_Do.Domain.Models.User", b =>
@@ -84,6 +173,39 @@ namespace Kan_Do.EntityFramework.Migrations
                         .IsRequired();
 
                     b.Navigation("AccountHolder");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Board", b =>
+                {
+                    b.HasOne("Kan_Do.Domain.Models.Account", "BoardCreator")
+                        .WithMany()
+                        .HasForeignKey("BoardCreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BoardCreator");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Card", b =>
+                {
+                    b.HasOne("Kan_Do.Domain.Models.Column", "Column")
+                        .WithMany()
+                        .HasForeignKey("ColumnId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Column");
+                });
+
+            modelBuilder.Entity("Kan_Do.Domain.Models.Column", b =>
+                {
+                    b.HasOne("Kan_Do.Domain.Models.Board", "Board")
+                        .WithMany()
+                        .HasForeignKey("BoardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Board");
                 });
 #pragma warning restore 612, 618
         }
