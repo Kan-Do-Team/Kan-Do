@@ -36,7 +36,7 @@ The latest build can always be found in the [Releases] section. Currently, this 
 
 ## Future Updates
 Future feature updates include:
-* Saving and loading boards
+* ~~Saving and loading boards~~
 * Sorting cards
 * Pomodoro Timer
 * Online account syncing
