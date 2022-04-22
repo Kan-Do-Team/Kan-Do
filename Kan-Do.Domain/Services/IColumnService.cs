@@ -11,5 +11,6 @@ namespace Kan_Do.Domain.Services
     {
         Task<IEnumerable<Column>> GetByUserId(int id);
         Task<Column> GetByPositionOnBoard(int boardId, int position);
+        Task<IEnumerable<Column>> GetByBoardId(int id);
     }
 }

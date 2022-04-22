@@ -74,12 +74,14 @@ namespace Kan_Do.WPF.ViewModels
                                     Priority = card.Priority,
                                     TaskDescription = card.TaskDescription,
                                     Assignee = card.Assignee,
+                                    ColumnId=column.Position+1,
                                 };
 
                                 generatedColumn.column_cards.Add(generatedCard);
                             }
                         }
                         generatedKanBanBoardViewModel.boardColumns.Add(generatedColumn);
+                        generatedKanBanBoardViewModel.mcolId++;
                     }
                 }
                 boardList.Add(generatedKanBanBoardViewModel);

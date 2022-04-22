@@ -40,7 +40,7 @@ namespace Kan_Do.WPF.ViewModels
         public ICommand SaveCommand { get; }
 
         //ColumnId keeps track of the given columnId in the boardColumns list
-        private int mcolId;
+        public int mcolId;
         private string boardName;
         public string BoardName
         {

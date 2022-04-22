@@ -35,10 +35,10 @@ namespace Kan_Do.EntityFramework.Services
         {
             using (KanDoDbContext context = _contextFactory.CreateDbContext())
             {
-                Column entity = await context.Columns.Include(a => a.Board)
-                    .ThenInclude(board => board.BoardCreator)
-                    .ThenInclude(account => account.AccountHolder)
-                    .FirstOrDefaultAsync((e) => e.Id == id);
+                Column? entity = await context.Columns.Include(a => a.Board)
+                                                     .ThenInclude(board => board.BoardCreator)
+                                                     .ThenInclude(account => account.AccountHolder)
+                                                     .FirstOrDefaultAsync((e) => e.Id == id);
                 return entity;
             }
         }
@@ -56,10 +56,11 @@ namespace Kan_Do.EntityFramework.Services
         {
             using (KanDoDbContext context = _contextFactory.CreateDbContext())
             {
-                Column entity = context.Columns.Include(a => a.Board)
-                    .ThenInclude(board => board.BoardCreator)
-                    .ThenInclude(account => account.AccountHolder)
-                    .ToList().FirstOrDefault((e) => e.Position == position && e.Board.Id == boardId);
+                Column? entity = context.Columns.Include(a => a.Board)
+                                               .ThenInclude(board => board.BoardCreator)
+                                               .ThenInclude(account => account.AccountHolder)
+                                               .ToList()
+                                               .FirstOrDefault((e) => e.Position == position && e.Board.Id == boardId);
                 return entity;
             }
         }
@@ -69,10 +70,23 @@ namespace Kan_Do.EntityFramework.Services
             using (KanDoDbContext context = _contextFactory.CreateDbContext())
             {
                 IEnumerable<Column> entities = await context.Columns.Include(a => a.Board)
-                    .ThenInclude(board => board.BoardCreator)
-                    .ThenInclude(account => account.AccountHolder)
-                    .Where(e => e.Board.BoardCreator.AccountHolder.Id == id)
-                    .ToListAsync();
+                                                                    .ThenInclude(board => board.BoardCreator)
+                                                                    .ThenInclude(account => account.AccountHolder)
+                                                                    .Where(e => e.Board.BoardCreator.AccountHolder.Id == id)
+                                                                    .ToListAsync();
+                return entities;
+            }
+        }
+
+        public async Task<IEnumerable<Column>> GetByBoardId(int id)
+        {
+            using (KanDoDbContext context = _contextFactory.CreateDbContext())
+            {
+                IEnumerable<Column> entities = await context.Columns.Include(a => a.Board)
+                                                                    .ThenInclude(board => board.BoardCreator)
+                                                                    .ThenInclude(account => account.AccountHolder)
+                                                                    .Where(e => e.Board.Id == id)
+                                                                    .ToListAsync();
                 return entities;
             }
         }

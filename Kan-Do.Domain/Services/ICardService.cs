@@ -11,5 +11,7 @@ namespace Kan_Do.Domain.Services
     {
         Task<IEnumerable<Card>> GetByUserId(int id);
         Task<Card> GetByColumnAndDate(int columnId, DateTime dateCreated);
+        Task<IEnumerable<Card>> GetByBoardId(int id);
+
     }
 }

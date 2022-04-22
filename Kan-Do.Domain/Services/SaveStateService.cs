@@ -40,6 +40,19 @@ namespace Kan_Do.Domain.Services
 
         public async Task Save(int accountId, int boardId, string boardName, ObservableCollection<KanbanColumn> boardColumns)
         {
+            //Delete columns/cards from DB that we're removed in the view
+            IEnumerable<Column> columnsInDB = await _columnService.GetByBoardId(boardId);
+            IEnumerable<Card> cardsInDB = await _cardService.GetByBoardId(boardId);
+
+            foreach (Card DBcard in cardsInDB)
+            { 
+                await _cardService.Delete(DBcard.Id);
+            }
+
+            foreach (Column DBcolumn in columnsInDB)
+            {
+                await _columnService.Delete(DBcolumn.Id);
+            }
 
             //save boards
             Board board = new Board()
@@ -59,20 +72,8 @@ namespace Kan_Do.Domain.Services
                     ColumnName = boardColumns[i].ColumnName,
                     Position = boardColumns[i].ColumnNumber,
                     Board = await _boardService.Get(boardId)
-                };
-                columnEntity = await _columnService.GetByPositionOnBoard(boardId, boardColumns[i].ColumnNumber);
-                if (columnEntity == null)
-                {
-                    await _columnService.Create(column);
-                }
-                else if (columnEntity.ColumnName != column.ColumnName)
-                {
-                    await _columnService.Update(columnEntity.Id, column);
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("Bro, how could this happen to meeeE??");
-                }
+                };           
+                await _columnService.Create(column);
             }
 
             //save cards
@@ -93,25 +94,7 @@ namespace Kan_Do.Domain.Services
                         TaskDescription = boardColumns[i].column_cards[j].TaskDescription,
                         Column = await _columnService.GetByPositionOnBoard(boardId, boardColumns[i].ColumnNumber)
                     };
-                    cardEntity = await _cardService.GetByColumnAndDate(boardColumns[i].ColumnNumber, boardColumns[i].column_cards[j].DateCreated);
-                    
-                    if (cardEntity == null)
-                    {
-                        await _cardService.Create(card);
-                    }
-                    else if (cardEntity.CardName != card.CardName ||
-                        cardEntity.Assignee != card.Assignee ||
-                        cardEntity.DueDate != card.DueDate ||
-                        cardEntity.Priority != card.Priority ||
-                        cardEntity.TaskDescription != card.TaskDescription ||
-                        cardEntity.Column.Id != card.Column.Id)
-                    {
-                        await _cardService.Update(cardEntity.Id, card);
-                    }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("Bro, how could this happen to meeeE??");
-                    }
+                    await _cardService.Create(card);
                 }
             }
         }

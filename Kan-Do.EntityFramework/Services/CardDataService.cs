@@ -35,7 +35,7 @@ namespace Kan_Do.EntityFramework.Services
         {
             using (KanDoDbContext context = _contextFactory.CreateDbContext())
             {
-                Card entity = context.Cards.Include(a => a.Column).ThenInclude(column => column.Board)
+                Card? entity = context.Cards.Include(a => a.Column).ThenInclude(column => column.Board)
                     .ThenInclude(board => board.BoardCreator)
                     .ThenInclude(account => account.AccountHolder)
                     .ToList().FirstOrDefault((e) => e.Id == id);
@@ -56,7 +56,7 @@ namespace Kan_Do.EntityFramework.Services
         {
             using (KanDoDbContext context = _contextFactory.CreateDbContext())
             {
-                Card entity = context.Cards.Include(a => a.Column).ThenInclude(column => column.Board)
+                Card? entity = context.Cards.Include(a => a.Column).ThenInclude(column => column.Board)
                     .ThenInclude(board => board.BoardCreator)
                     .ThenInclude(account => account.AccountHolder)
                     .ToList().FirstOrDefault((e) => e.DateCreated == dateCreated);
@@ -72,6 +72,19 @@ namespace Kan_Do.EntityFramework.Services
                     .ThenInclude(board => board.BoardCreator)
                     .ThenInclude(account => account.AccountHolder)
                     .Where(e => e.Column.Board.BoardCreator.AccountHolder.Id == id)
+                    .ToListAsync();
+                return entities;
+            }
+        }
+
+        public async Task<IEnumerable<Card>> GetByBoardId(int id)
+        {
+            using (KanDoDbContext context = _contextFactory.CreateDbContext())
+            {
+                IEnumerable<Card> entities = await context.Cards.Include(a => a.Column).ThenInclude(column => column.Board)
+                    .ThenInclude(board => board.BoardCreator)
+                    .ThenInclude(account => account.AccountHolder)
+                    .Where(e => e.Column.Board.Id == id)
                     .ToListAsync();
                 return entities;
             }
