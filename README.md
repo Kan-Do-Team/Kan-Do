@@ -15,7 +15,8 @@ This project is a way for individuals to organize their workspace and increase p
 * [License](#license)
 
 ## Requirements
-* Windows 7+ _\(That's it!\)_
+* Windows 7+
+* .NET 6.0 Desktop Runtime
 
 ## Releases
 The latest build can always be found in the [Releases] section. Currently, this application is only available on Windows OS with no plans to support other platforms.
