@@ -45,9 +45,6 @@ Kan-Do.EntityFramework/obj/Debug/net6.0-windows/Kan-Do.EntityFramework.pdb
 Kan-Do.EntityFramework/obj/Debug/net6.0-windows/Kan-Do.EntityFramework.dll
 Kan-Do.EntityFramework/obj/Debug/net6.0-windows/Kan-Do.EntityFramework.csproj.CoreCompileInputs.cache
 Kan-Do.EntityFramework/obj/Debug/net6.0-windows/Kan-Do.EntityFramework.csproj.AssemblyReference.cache
-Kan-Do.EntityFramework/Migrations/KanDoDbContextModelSnapshot.cs
-Kan-Do.EntityFramework/Migrations/20220424030904_allow-nullable-attributes.Designer.cs
-Kan-Do.EntityFramework/Migrations/20220424030904_allow-nullable-attributes.cs
 Kan-Do.EntityFramework/bin/Debug/net6.0-windows/Kan-Do.EntityFramework.pdb
 Kan-Do.EntityFramework/bin/Debug/net6.0-windows/Kan-Do.EntityFramework.dll
 Kan-Do.EntityFramework/bin/Debug/net6.0-windows/Kan-Do.Domain.pdb
@@ -56,6 +53,5 @@ Kan-Do.Domain/obj/Debug/net6.0-windows/refint/Kan-Do.Domain.dll
 Kan-Do.Domain/obj/Debug/net6.0-windows/ref/Kan-Do.Domain.dll
 Kan-Do.Domain/obj/Debug/net6.0-windows/Kan-Do.Domain.pdb
 Kan-Do.Domain/obj/Debug/net6.0-windows/Kan-Do.Domain.dll
-Kan-Do.Domain/Models/Card.cs
 Kan-Do.Domain/bin/Debug/net6.0-windows/Kan-Do.Domain.pdb
 Kan-Do.Domain/bin/Debug/net6.0-windows/Kan-Do.Domain.dll
