@@ -302,3 +302,10 @@ C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\K
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.WPF.csproj.CopyComplete
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\Kan-Do.WPF.genruntimeconfig.cache
 C:\Users\seren\Source\Repos\Kan-Do-Team\Kan-Do\Kan-Do\obj\Debug\net6.0-windows\ref\Kan-Do.WPF.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Nasir\Documents\GitHub\Kan-Do-Team\Kan-Do\Kan-Do\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
